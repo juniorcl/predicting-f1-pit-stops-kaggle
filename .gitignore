@@ -224,9 +224,11 @@ __marimo__/
 
 # data
 data/
+data/*
 
 # catboost
 catboost_info
 
 # pickle file
+models/*
 *.pkl
