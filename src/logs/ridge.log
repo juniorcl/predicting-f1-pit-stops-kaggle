@@ -1,0 +1,783 @@
+2026-05-18 18:50:50,689 - INFO - ----- Fine Tuning -----
+2026-05-18 18:50:50,689 - INFO - A new study created in memory with name: no-name-2e2ebd38-ba32-4f51-83da-952add7ad1fe
+2026-05-18 18:50:51,486 - WARNING - Trial 3 failed with parameters: {'alpha': 0.0025222345265211634, 'solver': 'lsqr', 'tol': 0.00019734784681357868, 'fit_intercept': True, 'max_iter': 2500} because of the following error: NameError("name 'CalibratedClassifierCV' is not defined").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 124, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 103, in objective
+    calibrated_ridge = CalibratedClassifierCV(
+                       ^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'CalibratedClassifierCV' is not defined
+2026-05-18 18:50:51,500 - WARNING - Trial 6 failed with parameters: {'alpha': 0.04581299659172057, 'solver': 'saga', 'tol': 0.00012223271312299943, 'fit_intercept': True, 'max_iter': 4000} because of the following error: NameError("name 'CalibratedClassifierCV' is not defined").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 124, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 103, in objective
+    calibrated_ridge = CalibratedClassifierCV(
+                       ^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'CalibratedClassifierCV' is not defined
+2026-05-18 18:50:51,503 - WARNING - Trial 3 failed with value None.
+2026-05-18 18:50:51,507 - WARNING - Trial 6 failed with value None.
+2026-05-18 18:50:51,514 - WARNING - Trial 10 failed with parameters: {'alpha': 0.2741068032344578, 'solver': 'sparse_cg', 'tol': 0.0012710661824801408, 'fit_intercept': True, 'max_iter': 500} because of the following error: NameError("name 'CalibratedClassifierCV' is not defined").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 124, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 103, in objective
+    calibrated_ridge = CalibratedClassifierCV(
+                       ^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'CalibratedClassifierCV' is not defined
+2026-05-18 18:50:51,514 - WARNING - Trial 4 failed with parameters: {'alpha': 0.008250185308110223, 'solver': 'sag', 'tol': 8.65360153692318e-05, 'fit_intercept': False, 'max_iter': 4500} because of the following error: NameError("name 'CalibratedClassifierCV' is not defined").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 124, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 103, in objective
+    calibrated_ridge = CalibratedClassifierCV(
+                       ^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'CalibratedClassifierCV' is not defined
+2026-05-18 18:50:51,518 - WARNING - Trial 10 failed with value None.
+2026-05-18 18:50:51,519 - WARNING - Trial 4 failed with value None.
+2026-05-18 18:50:51,522 - WARNING - Trial 0 failed with parameters: {'alpha': 0.003347762964076063, 'solver': 'sag', 'tol': 0.0016739421288610756, 'fit_intercept': False, 'max_iter': 3000} because of the following error: NameError("name 'CalibratedClassifierCV' is not defined").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 124, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 103, in objective
+    calibrated_ridge = CalibratedClassifierCV(
+                       ^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'CalibratedClassifierCV' is not defined
+2026-05-18 18:50:51,523 - WARNING - Trial 8 failed with parameters: {'alpha': 5.5943232551898334e-05, 'solver': 'saga', 'tol': 0.00013799998660167967, 'fit_intercept': True, 'max_iter': 3000} because of the following error: NameError("name 'CalibratedClassifierCV' is not defined").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 124, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 103, in objective
+    calibrated_ridge = CalibratedClassifierCV(
+                       ^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'CalibratedClassifierCV' is not defined
+2026-05-18 18:50:51,523 - WARNING - Trial 7 failed with parameters: {'alpha': 0.0013979730531628897, 'solver': 'lbfgs', 'tol': 2.930434096151731e-05, 'fit_intercept': False, 'max_iter': 2000} because of the following error: NameError("name 'CalibratedClassifierCV' is not defined").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 124, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 103, in objective
+    calibrated_ridge = CalibratedClassifierCV(
+                       ^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'CalibratedClassifierCV' is not defined
+2026-05-18 18:50:51,526 - WARNING - Trial 11 failed with parameters: {'alpha': 0.01573232806200465, 'solver': 'cholesky', 'tol': 0.06648454537041208, 'fit_intercept': True, 'max_iter': 500} because of the following error: NameError("name 'CalibratedClassifierCV' is not defined").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 124, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 103, in objective
+    calibrated_ridge = CalibratedClassifierCV(
+                       ^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'CalibratedClassifierCV' is not defined
+2026-05-18 18:50:51,526 - WARNING - Trial 2 failed with parameters: {'alpha': 0.007970951853461314, 'solver': 'lbfgs', 'tol': 1.24913419789593e-05, 'fit_intercept': False, 'max_iter': 3000} because of the following error: NameError("name 'CalibratedClassifierCV' is not defined").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 124, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 103, in objective
+    calibrated_ridge = CalibratedClassifierCV(
+                       ^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'CalibratedClassifierCV' is not defined
+2026-05-18 18:50:51,527 - WARNING - Trial 9 failed with parameters: {'alpha': 0.058627863210087026, 'solver': 'svd', 'tol': 0.0005713246986916842, 'fit_intercept': False, 'max_iter': 3000} because of the following error: NameError("name 'CalibratedClassifierCV' is not defined").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 124, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 103, in objective
+    calibrated_ridge = CalibratedClassifierCV(
+                       ^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'CalibratedClassifierCV' is not defined
+2026-05-18 18:50:51,528 - WARNING - Trial 0 failed with value None.
+2026-05-18 18:50:51,529 - WARNING - Trial 8 failed with value None.
+2026-05-18 18:50:51,530 - WARNING - Trial 7 failed with value None.
+2026-05-18 18:50:51,531 - WARNING - Trial 5 failed with parameters: {'alpha': 0.014011268428796124, 'solver': 'auto', 'tol': 0.00028484006054277236, 'fit_intercept': True, 'max_iter': 4500} because of the following error: NameError("name 'CalibratedClassifierCV' is not defined").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 124, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 103, in objective
+    calibrated_ridge = CalibratedClassifierCV(
+                       ^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'CalibratedClassifierCV' is not defined
+2026-05-18 18:50:51,532 - WARNING - Trial 11 failed with value None.
+2026-05-18 18:50:51,533 - WARNING - Trial 1 failed with parameters: {'alpha': 0.00010588226818942915, 'solver': 'sag', 'tol': 5.644113873772704e-05, 'fit_intercept': True, 'max_iter': 500} because of the following error: NameError("name 'CalibratedClassifierCV' is not defined").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 124, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 103, in objective
+    calibrated_ridge = CalibratedClassifierCV(
+                       ^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'CalibratedClassifierCV' is not defined
+2026-05-18 18:50:51,533 - WARNING - Trial 2 failed with value None.
+2026-05-18 18:50:51,533 - WARNING - Trial 9 failed with value None.
+2026-05-18 18:50:51,535 - WARNING - Trial 5 failed with value None.
+2026-05-18 18:50:51,535 - WARNING - Trial 1 failed with value None.
+2026-05-18 18:51:44,265 - INFO - ----- Fine Tuning -----
+2026-05-18 18:51:44,265 - INFO - A new study created in memory with name: no-name-456a745f-d592-4e45-b460-65f33de71d5e
+2026-05-18 18:51:45,069 - WARNING - Trial 2 failed with parameters: {'alpha': 0.0012166708034544935, 'solver': 'lbfgs', 'tol': 0.0010172326835657817, 'fit_intercept': True, 'max_iter': 500, 'calibration_method': 'isotonic'} because of the following error: TypeError("CalibratedClassifierCV.fit() missing 1 required positional argument: 'y'").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 125, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 108, in objective
+    ).fit(X_train)
+      ~~~^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+TypeError: CalibratedClassifierCV.fit() missing 1 required positional argument: 'y'
+2026-05-18 18:51:45,076 - WARNING - Trial 4 failed with parameters: {'alpha': 0.001532780745704831, 'solver': 'auto', 'tol': 3.170285622884126e-05, 'fit_intercept': True, 'max_iter': 5000, 'calibration_method': 'sigmoid'} because of the following error: TypeError("CalibratedClassifierCV.fit() missing 1 required positional argument: 'y'").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 125, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 108, in objective
+    ).fit(X_train)
+      ~~~^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+TypeError: CalibratedClassifierCV.fit() missing 1 required positional argument: 'y'
+2026-05-18 18:51:45,077 - WARNING - Trial 11 failed with parameters: {'alpha': 1.4430854089579904e-05, 'solver': 'cholesky', 'tol': 0.023639850014519338, 'fit_intercept': False, 'max_iter': 4500, 'calibration_method': 'isotonic'} because of the following error: TypeError("CalibratedClassifierCV.fit() missing 1 required positional argument: 'y'").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 125, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 108, in objective
+    ).fit(X_train)
+      ~~~^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+TypeError: CalibratedClassifierCV.fit() missing 1 required positional argument: 'y'
+2026-05-18 18:51:45,077 - WARNING - Trial 6 failed with parameters: {'alpha': 0.9442209736805223, 'solver': 'sparse_cg', 'tol': 0.027622937487480907, 'fit_intercept': False, 'max_iter': 5000, 'calibration_method': 'isotonic'} because of the following error: TypeError("CalibratedClassifierCV.fit() missing 1 required positional argument: 'y'").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 125, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 108, in objective
+    ).fit(X_train)
+      ~~~^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+TypeError: CalibratedClassifierCV.fit() missing 1 required positional argument: 'y'
+2026-05-18 18:51:45,080 - WARNING - Trial 2 failed with value None.
+2026-05-18 18:51:45,083 - WARNING - Trial 8 failed with parameters: {'alpha': 20.819247528916996, 'solver': 'lbfgs', 'tol': 0.0005502044433888608, 'fit_intercept': False, 'max_iter': 2000, 'calibration_method': 'isotonic'} because of the following error: TypeError("CalibratedClassifierCV.fit() missing 1 required positional argument: 'y'").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 125, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 108, in objective
+    ).fit(X_train)
+      ~~~^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+TypeError: CalibratedClassifierCV.fit() missing 1 required positional argument: 'y'
+2026-05-18 18:51:45,084 - WARNING - Trial 10 failed with parameters: {'alpha': 0.029711799277737625, 'solver': 'auto', 'tol': 1.5733920832274818e-05, 'fit_intercept': True, 'max_iter': 4000, 'calibration_method': 'sigmoid'} because of the following error: TypeError("CalibratedClassifierCV.fit() missing 1 required positional argument: 'y'").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 125, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 108, in objective
+    ).fit(X_train)
+      ~~~^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+TypeError: CalibratedClassifierCV.fit() missing 1 required positional argument: 'y'
+2026-05-18 18:51:45,084 - WARNING - Trial 4 failed with value None.
+2026-05-18 18:51:45,087 - WARNING - Trial 11 failed with value None.
+2026-05-18 18:51:45,088 - WARNING - Trial 5 failed with parameters: {'alpha': 0.5362727392462711, 'solver': 'saga', 'tol': 0.0007132821103515847, 'fit_intercept': False, 'max_iter': 1000, 'calibration_method': 'sigmoid'} because of the following error: TypeError("CalibratedClassifierCV.fit() missing 1 required positional argument: 'y'").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 125, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 108, in objective
+    ).fit(X_train)
+      ~~~^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+TypeError: CalibratedClassifierCV.fit() missing 1 required positional argument: 'y'
+2026-05-18 18:51:45,088 - WARNING - Trial 0 failed with parameters: {'alpha': 0.0004892732644737755, 'solver': 'lbfgs', 'tol': 0.0008753453034895743, 'fit_intercept': False, 'max_iter': 500, 'calibration_method': 'sigmoid'} because of the following error: TypeError("CalibratedClassifierCV.fit() missing 1 required positional argument: 'y'").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 125, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 108, in objective
+    ).fit(X_train)
+      ~~~^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+TypeError: CalibratedClassifierCV.fit() missing 1 required positional argument: 'y'
+2026-05-18 18:51:45,089 - WARNING - Trial 7 failed with parameters: {'alpha': 21.08859564103971, 'solver': 'saga', 'tol': 0.062446608696441, 'fit_intercept': True, 'max_iter': 2500, 'calibration_method': 'isotonic'} because of the following error: TypeError("CalibratedClassifierCV.fit() missing 1 required positional argument: 'y'").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 125, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 108, in objective
+    ).fit(X_train)
+      ~~~^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+TypeError: CalibratedClassifierCV.fit() missing 1 required positional argument: 'y'
+2026-05-18 18:51:45,090 - WARNING - Trial 1 failed with parameters: {'alpha': 0.020118847044828365, 'solver': 'sag', 'tol': 0.013936931425830587, 'fit_intercept': True, 'max_iter': 4500, 'calibration_method': 'isotonic'} because of the following error: TypeError("CalibratedClassifierCV.fit() missing 1 required positional argument: 'y'").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 125, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 108, in objective
+    ).fit(X_train)
+      ~~~^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+TypeError: CalibratedClassifierCV.fit() missing 1 required positional argument: 'y'
+2026-05-18 18:51:45,090 - WARNING - Trial 6 failed with value None.
+2026-05-18 18:51:45,091 - WARNING - Trial 8 failed with value None.
+2026-05-18 18:51:45,092 - WARNING - Trial 10 failed with value None.
+2026-05-18 18:51:45,094 - WARNING - Trial 3 failed with parameters: {'alpha': 2.847092688018178, 'solver': 'saga', 'tol': 8.235405136117523e-05, 'fit_intercept': False, 'max_iter': 3000, 'calibration_method': 'sigmoid'} because of the following error: TypeError("CalibratedClassifierCV.fit() missing 1 required positional argument: 'y'").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 125, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 108, in objective
+    ).fit(X_train)
+      ~~~^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+TypeError: CalibratedClassifierCV.fit() missing 1 required positional argument: 'y'
+2026-05-18 18:51:45,095 - WARNING - Trial 9 failed with parameters: {'alpha': 0.001425746017568553, 'solver': 'cholesky', 'tol': 1.778016404690031e-05, 'fit_intercept': True, 'max_iter': 4000, 'calibration_method': 'isotonic'} because of the following error: TypeError("CalibratedClassifierCV.fit() missing 1 required positional argument: 'y'").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 125, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 108, in objective
+    ).fit(X_train)
+      ~~~^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+TypeError: CalibratedClassifierCV.fit() missing 1 required positional argument: 'y'
+2026-05-18 18:51:45,096 - WARNING - Trial 5 failed with value None.
+2026-05-18 18:51:45,096 - WARNING - Trial 0 failed with value None.
+2026-05-18 18:51:45,097 - WARNING - Trial 7 failed with value None.
+2026-05-18 18:51:45,097 - WARNING - Trial 1 failed with value None.
+2026-05-18 18:51:45,099 - WARNING - Trial 3 failed with value None.
+2026-05-18 18:51:45,099 - WARNING - Trial 9 failed with value None.
+2026-05-18 18:52:36,547 - INFO - ----- Fine Tuning -----
+2026-05-18 18:52:36,548 - INFO - A new study created in memory with name: no-name-a54f7cab-db27-4415-8428-14a79c807331
+2026-05-18 18:55:21,798 - INFO - Trial 10 finished with value: 0.8878166023479498 and parameters: {'alpha': 3.869726457583338, 'solver': 'cholesky', 'tol': 2.741912583854589e-05, 'fit_intercept': True, 'max_iter': 500, 'calibration_method': 'isotonic'}. Best is trial 10 with value: 0.8878166023479498.
+2026-05-18 18:55:25,614 - INFO - Trial 5 finished with value: 0.8878351648041629 and parameters: {'alpha': 0.0001324143664934764, 'solver': 'auto', 'tol': 0.020109390563047506, 'fit_intercept': False, 'max_iter': 2500, 'calibration_method': 'sigmoid'}. Best is trial 5 with value: 0.8878351648041629.
+2026-05-18 18:55:28,156 - INFO - Trial 4 finished with value: 0.8878350795175514 and parameters: {'alpha': 0.012662674550783765, 'solver': 'cholesky', 'tol': 3.847123776657924e-05, 'fit_intercept': False, 'max_iter': 3000, 'calibration_method': 'sigmoid'}. Best is trial 5 with value: 0.8878351648041629.
+2026-05-18 18:56:18,201 - INFO - Trial 6 finished with value: 0.8866164496348409 and parameters: {'alpha': 0.0013087979141746973, 'solver': 'sparse_cg', 'tol': 0.012032836601684301, 'fit_intercept': True, 'max_iter': 5000, 'calibration_method': 'isotonic'}. Best is trial 5 with value: 0.8878351648041629.
+2026-05-18 18:56:40,951 - INFO - Trial 11 finished with value: 0.8869294352744902 and parameters: {'alpha': 0.09201023854342416, 'solver': 'sparse_cg', 'tol': 0.005445940034703726, 'fit_intercept': False, 'max_iter': 1000, 'calibration_method': 'isotonic'}. Best is trial 5 with value: 0.8878351648041629.
+2026-05-18 18:56:43,802 - INFO - Trial 9 finished with value: 0.8864980904155255 and parameters: {'alpha': 0.001919552183620336, 'solver': 'sparse_cg', 'tol': 0.012789091347933745, 'fit_intercept': False, 'max_iter': 3500, 'calibration_method': 'sigmoid'}. Best is trial 5 with value: 0.8878351648041629.
+2026-05-18 18:56:44,820 - INFO - Trial 7 finished with value: 0.8878165523840954 and parameters: {'alpha': 0.06489105590125249, 'solver': 'svd', 'tol': 0.003527255002706486, 'fit_intercept': True, 'max_iter': 3500, 'calibration_method': 'isotonic'}. Best is trial 5 with value: 0.8878351648041629.
+2026-05-18 18:57:09,724 - INFO - Trial 13 pruned. 
+2026-05-18 18:58:23,231 - INFO - Trial 18 pruned. 
+2026-05-18 18:58:50,304 - INFO - Trial 0 finished with value: 0.8878080184106025 and parameters: {'alpha': 0.02182730718224029, 'solver': 'sparse_cg', 'tol': 0.00025021626282844384, 'fit_intercept': True, 'max_iter': 2500, 'calibration_method': 'sigmoid'}. Best is trial 5 with value: 0.8878351648041629.
+2026-05-18 18:59:11,789 - INFO - Trial 16 finished with value: 0.8878220420758225 and parameters: {'alpha': 3.2815009939905497, 'solver': 'cholesky', 'tol': 0.02691531879691059, 'fit_intercept': True, 'max_iter': 1000, 'calibration_method': 'isotonic'}. Best is trial 5 with value: 0.8878351648041629.
+2026-05-18 18:59:22,087 - INFO - Trial 19 pruned. 
+2026-05-18 18:59:24,975 - INFO - Trial 14 finished with value: 0.8869902200677167 and parameters: {'alpha': 0.00013638300116058808, 'solver': 'sparse_cg', 'tol': 0.003455886549595875, 'fit_intercept': True, 'max_iter': 5000, 'calibration_method': 'sigmoid'}. Best is trial 5 with value: 0.8878351648041629.
+2026-05-18 19:00:01,068 - INFO - Trial 15 finished with value: 0.8878349920114974 and parameters: {'alpha': 0.04614789862148727, 'solver': 'svd', 'tol': 0.033930052621030854, 'fit_intercept': False, 'max_iter': 1000, 'calibration_method': 'sigmoid'}. Best is trial 5 with value: 0.8878351648041629.
+2026-05-18 19:00:17,783 - INFO - Trial 2 finished with value: 0.8878127062905625 and parameters: {'alpha': 0.0012596005353157419, 'solver': 'sparse_cg', 'tol': 0.0001006357854669625, 'fit_intercept': False, 'max_iter': 2000, 'calibration_method': 'sigmoid'}. Best is trial 5 with value: 0.8878351648041629.
+2026-05-18 19:00:52,459 - INFO - Trial 20 finished with value: 0.887566644474884 and parameters: {'alpha': 86.61375102580094, 'solver': 'cholesky', 'tol': 0.03602426268009495, 'fit_intercept': False, 'max_iter': 1000, 'calibration_method': 'sigmoid'}. Best is trial 5 with value: 0.8878351648041629.
+2026-05-18 19:01:12,308 - INFO - Trial 21 finished with value: 0.8878334074308233 and parameters: {'alpha': 3.24008882226385e-05, 'solver': 'auto', 'tol': 0.0011463811692291961, 'fit_intercept': False, 'max_iter': 1500, 'calibration_method': 'sigmoid'}. Best is trial 5 with value: 0.8878351648041629.
+2026-05-18 19:01:23,974 - INFO - Trial 22 finished with value: 0.8878356407460448 and parameters: {'alpha': 1.0125607195049596e-05, 'solver': 'auto', 'tol': 0.0003637435311349743, 'fit_intercept': False, 'max_iter': 3500, 'calibration_method': 'sigmoid'}. Best is trial 22 with value: 0.8878356407460448.
+2026-05-18 19:01:35,299 - INFO - Trial 23 finished with value: 0.887834775527072 and parameters: {'alpha': 1.3972221907129424e-05, 'solver': 'auto', 'tol': 1.9949712886894104e-05, 'fit_intercept': False, 'max_iter': 2000, 'calibration_method': 'sigmoid'}. Best is trial 22 with value: 0.8878356407460448.
+2026-05-18 19:01:35,368 - INFO - Trial 24 finished with value: 0.8878343376187816 and parameters: {'alpha': 2.1923309152527905e-05, 'solver': 'auto', 'tol': 1.4457788748001709e-05, 'fit_intercept': False, 'max_iter': 2000, 'calibration_method': 'sigmoid'}. Best is trial 22 with value: 0.8878356407460448.
+2026-05-18 19:02:33,142 - INFO - ----- Fine Tuning -----
+2026-05-18 19:02:33,142 - INFO - A new study created in memory with name: no-name-f9f73944-5606-406f-9c6b-f374902a34af
+2026-05-18 19:02:39,338 - WARNING - Trial 7 failed with parameters: {'alpha': 0.6909193028852696, 'solver': 'lbfgs', 'tol': 6.143638272274603e-05, 'fit_intercept': True, 'max_iter': 4500, 'calibration_method': 'sigmoid'} because of the following error: ValueError("'lbfgs' solver can be used only when positive=True. Please use another solver.").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 123, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=50, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 108, in objective
+    ).fit(X_train, y_train)
+      ~~~^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/calibration.py", line 438, in fit
+    self.calibrated_classifiers_ = parallel(
+                                   ~~~~~~~~^
+        delayed(_fit_classifier_calibrator_pair)(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+        for train, test in cv.split(X, y, **routed_params.splitter.split)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/parallel.py", line 91, in __call__
+    return super().__call__(iterable_with_config_and_warning_filters)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/joblib/parallel.py", line 1986, in __call__
+    return output if self.return_generator else list(output)
+                                                ~~~~^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/joblib/parallel.py", line 1914, in _get_sequential_output
+    res = func(*args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/utils/parallel.py", line 184, in __call__
+    return self.function(*args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/calibration.py", line 656, in _fit_classifier_calibrator_pair
+    estimator.fit(X_train, y_train, **fit_params_train)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 621, in fit
+    self._final_estimator.fit(Xt, y, **last_step_params["fit"])
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/linear_model/_ridge.py", line 1601, in fit
+    super().fit(X, Y, sample_weight=sample_weight)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/linear_model/_ridge.py", line 929, in fit
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: 'lbfgs' solver can be used only when positive=True. Please use another solver.
+2026-05-18 19:02:39,449 - WARNING - Trial 7 failed with value None.
+2026-05-18 19:11:23,517 - INFO - ----- Fine Tuning -----
+2026-05-18 19:11:23,517 - INFO - A new study created in memory with name: no-name-7d5954d2-e9e6-45ca-89ee-ce869ea659c5
+2026-05-18 19:11:31,311 - WARNING - Trial 11 failed with parameters: {'alpha': 0.0014550888063321959, 'solver': 'lbfgs', 'tol': 0.0002872973380511859, 'fit_intercept': False, 'max_iter': 3000} because of the following error: ValueError("'lbfgs' solver can be used only when positive=True. Please use another solver.").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 117, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=50, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 102, in objective
+    ).fit(X_train, y_train)
+      ~~~^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 621, in fit
+    self._final_estimator.fit(Xt, y, **last_step_params["fit"])
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/linear_model/_ridge.py", line 1601, in fit
+    super().fit(X, Y, sample_weight=sample_weight)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/linear_model/_ridge.py", line 929, in fit
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: 'lbfgs' solver can be used only when positive=True. Please use another solver.
+2026-05-18 19:11:31,356 - WARNING - Trial 11 failed with value None.
+2026-05-18 19:11:31,362 - WARNING - Trial 1 failed with parameters: {'alpha': 0.0003282093985190827, 'solver': 'lbfgs', 'tol': 4.345971208362177e-05, 'fit_intercept': True, 'max_iter': 1000} because of the following error: ValueError("'lbfgs' solver can be used only when positive=True. Please use another solver.").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 117, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=50, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 102, in objective
+    ).fit(X_train, y_train)
+      ~~~^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/pipeline.py", line 621, in fit
+    self._final_estimator.fit(Xt, y, **last_step_params["fit"])
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/base.py", line 1336, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/linear_model/_ridge.py", line 1601, in fit
+    super().fit(X, Y, sample_weight=sample_weight)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/sklearn/linear_model/_ridge.py", line 929, in fit
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: 'lbfgs' solver can be used only when positive=True. Please use another solver.
+2026-05-18 19:11:31,374 - WARNING - Trial 1 failed with value None.
+2026-05-18 19:12:07,828 - INFO - Trial 3 finished with value: 0.8878842991489249 and parameters: {'alpha': 9.926670861814036e-05, 'solver': 'cholesky', 'tol': 0.005214713276168711, 'fit_intercept': True, 'max_iter': 500}. Best is trial 3 with value: 0.8878842991489249.
+2026-05-18 19:12:46,718 - INFO - Trial 9 finished with value: 0.8879023146740174 and parameters: {'alpha': 2.0711208416882396, 'solver': 'svd', 'tol': 8.506317057352965e-05, 'fit_intercept': True, 'max_iter': 4500}. Best is trial 9 with value: 0.8879023146740174.
+2026-05-18 19:12:51,534 - INFO - Trial 8 finished with value: 0.8880800017314694 and parameters: {'alpha': 0.018846166599617607, 'solver': 'svd', 'tol': 0.06507741346418516, 'fit_intercept': True, 'max_iter': 4500}. Best is trial 8 with value: 0.8880800017314694.
+2026-05-18 19:12:57,876 - INFO - Trial 4 finished with value: 0.8880698082846884 and parameters: {'alpha': 0.00018244658506585544, 'solver': 'svd', 'tol': 0.004250345185185366, 'fit_intercept': True, 'max_iter': 2500}. Best is trial 8 with value: 0.8880800017314694.
+2026-05-18 19:13:13,528 - INFO - Trial 2 finished with value: 0.8879967187234776 and parameters: {'alpha': 0.0010367524645187288, 'solver': 'lsqr', 'tol': 1.143259090362447e-05, 'fit_intercept': True, 'max_iter': 3500}. Best is trial 8 with value: 0.8880800017314694.
+2026-05-18 19:13:41,111 - INFO - Trial 5 finished with value: 0.8879547923055364 and parameters: {'alpha': 0.00041601828594407423, 'solver': 'sparse_cg', 'tol': 2.374448914165138e-05, 'fit_intercept': True, 'max_iter': 2000}. Best is trial 8 with value: 0.8880800017314694.
+2026-05-18 19:15:23,692 - INFO - Trial 10 pruned. 
+2026-05-18 19:15:31,569 - INFO - Trial 7 pruned. 
+2026-05-18 19:17:16,681 - INFO - ----- Fine Tuning -----
+2026-05-18 19:17:16,681 - INFO - A new study created in memory with name: no-name-70c975b6-50e7-4fd4-bbfb-7d9fafa146ec
+2026-05-18 19:18:10,530 - INFO - Trial 10 finished with value: 0.8823805024277369 and parameters: {'solver': 'cholesky', 'alpha': 0.19136128726148055, 'tol': 0.0037294742929239707, 'fit_intercept': False, 'class_weight': None}. Best is trial 10 with value: 0.8823805024277369.
+2026-05-18 19:18:11,275 - INFO - Trial 1 finished with value: 0.8823760327499848 and parameters: {'solver': 'cholesky', 'alpha': 0.029024164607423287, 'tol': 0.06670955946079361, 'fit_intercept': False, 'class_weight': None}. Best is trial 10 with value: 0.8823805024277369.
+2026-05-18 19:18:11,342 - INFO - Trial 6 finished with value: 0.8823809829735234 and parameters: {'solver': 'auto', 'alpha': 0.00036818359232090365, 'tol': 4.243429105018954e-05, 'fit_intercept': True, 'class_weight': None}. Best is trial 6 with value: 0.8823809829735234.
+2026-05-18 19:18:11,470 - INFO - Trial 7 finished with value: 0.8878696956078374 and parameters: {'solver': 'auto', 'alpha': 0.004763579713783934, 'tol': 0.052627733289294036, 'fit_intercept': False, 'class_weight': 'balanced'}. Best is trial 7 with value: 0.8878696956078374.
+2026-05-18 19:18:11,513 - INFO - Trial 2 finished with value: 0.8824217912738014 and parameters: {'solver': 'auto', 'alpha': 0.00013262659731918142, 'tol': 0.0050817389605543415, 'fit_intercept': True, 'class_weight': None}. Best is trial 7 with value: 0.8878696956078374.
+2026-05-18 19:18:11,514 - INFO - Trial 9 finished with value: 0.8823771957894339 and parameters: {'solver': 'cholesky', 'alpha': 2.8044246592769714e-05, 'tol': 0.0034188434923934103, 'fit_intercept': True, 'class_weight': None}. Best is trial 7 with value: 0.8878696956078374.
+2026-05-18 19:18:11,814 - INFO - Trial 4 finished with value: 0.8879346264595039 and parameters: {'solver': 'cholesky', 'alpha': 0.0001266659400600067, 'tol': 0.016468907771053764, 'fit_intercept': False, 'class_weight': 'balanced'}. Best is trial 4 with value: 0.8879346264595039.
+2026-05-18 19:18:12,177 - INFO - Trial 5 finished with value: 0.8879359569245568 and parameters: {'solver': 'auto', 'alpha': 0.00041710870240973836, 'tol': 1.0082757479695353e-05, 'fit_intercept': True, 'class_weight': 'balanced'}. Best is trial 5 with value: 0.8879359569245568.
+2026-05-18 19:18:52,408 - INFO - Trial 12 pruned. 
+2026-05-18 19:18:56,072 - INFO - Trial 8 finished with value: 0.8878918928268658 and parameters: {'solver': 'lsqr', 'alpha': 10.985160537390463, 'tol': 4.049291306675262e-05, 'fit_intercept': True, 'class_weight': 'balanced', 'max_iter': 5000}. Best is trial 5 with value: 0.8879359569245568.
+2026-05-18 19:19:05,147 - INFO - Trial 14 finished with value: 0.8878180884038714 and parameters: {'solver': 'auto', 'alpha': 0.3729309406206613, 'tol': 0.011443838528909522, 'fit_intercept': False, 'class_weight': 'balanced'}. Best is trial 5 with value: 0.8879359569245568.
+2026-05-18 19:19:05,252 - INFO - Trial 16 pruned. 
+2026-05-18 19:19:05,458 - INFO - Trial 15 finished with value: 0.8878672767203746 and parameters: {'solver': 'cholesky', 'alpha': 6.196252802212333e-05, 'tol': 0.040762370834858376, 'fit_intercept': False, 'class_weight': 'balanced'}. Best is trial 5 with value: 0.8879359569245568.
+2026-05-18 19:19:06,373 - INFO - Trial 13 finished with value: 0.8878068579688106 and parameters: {'solver': 'auto', 'alpha': 4.195805102392099, 'tol': 0.006177240527576731, 'fit_intercept': True, 'class_weight': 'balanced'}. Best is trial 5 with value: 0.8879359569245568.
+2026-05-18 19:19:07,819 - INFO - Trial 19 finished with value: 0.8878612549099086 and parameters: {'solver': 'cholesky', 'alpha': 0.10439903159384095, 'tol': 0.00016950842344954262, 'fit_intercept': True, 'class_weight': 'balanced'}. Best is trial 5 with value: 0.8879359569245568.
+2026-05-18 19:19:11,861 - INFO - Trial 3 pruned. 
+2026-05-18 19:19:19,441 - INFO - Trial 20 finished with value: 0.8879058010933706 and parameters: {'solver': 'auto', 'alpha': 4.877252972973279, 'tol': 1.3196113344134092e-05, 'fit_intercept': True, 'class_weight': 'balanced'}. Best is trial 5 with value: 0.8879359569245568.
+2026-05-18 19:21:41,490 - INFO - ----- Fine Tuning -----
+2026-05-18 19:21:41,490 - INFO - A new study created in memory with name: no-name-b3bfa3e9-0353-4c34-bcad-fd6bf94cf0ad
+2026-05-18 19:22:26,226 - INFO - Trial 8 finished with value: 0.8823344355188967 and parameters: {'solver': 'auto', 'alpha': 0.0005957654424830578, 'tol': 0.005914379430318779, 'fit_intercept': False, 'class_weight': None}. Best is trial 8 with value: 0.8823344355188967.
+2026-05-18 19:22:26,298 - INFO - Trial 10 finished with value: 0.8823333112362652 and parameters: {'solver': 'cholesky', 'alpha': 0.6602218653222967, 'tol': 0.00341032507180805, 'fit_intercept': False, 'class_weight': None}. Best is trial 8 with value: 0.8823344355188967.
+2026-05-18 19:22:26,436 - INFO - Trial 11 finished with value: 0.8823471930637469 and parameters: {'solver': 'auto', 'alpha': 5.479990415955302, 'tol': 0.0002705062166528303, 'fit_intercept': True, 'class_weight': None}. Best is trial 11 with value: 0.8823471930637469.
+2026-05-18 19:22:26,508 - INFO - Trial 5 finished with value: 0.8823335604355107 and parameters: {'solver': 'cholesky', 'alpha': 0.033673141548458296, 'tol': 0.022482927814153997, 'fit_intercept': True, 'class_weight': None}. Best is trial 11 with value: 0.8823471930637469.
+2026-05-18 19:22:26,577 - INFO - Trial 0 finished with value: 0.8877084952676768 and parameters: {'solver': 'cholesky', 'alpha': 55.084847237957355, 'tol': 0.0005792773720643268, 'fit_intercept': False, 'class_weight': 'balanced'}. Best is trial 0 with value: 0.8877084952676768.
+2026-05-18 19:22:26,641 - INFO - Trial 9 finished with value: 0.8878181238767411 and parameters: {'solver': 'cholesky', 'alpha': 0.0042833021299830566, 'tol': 0.00010000533781340507, 'fit_intercept': True, 'class_weight': 'balanced'}. Best is trial 9 with value: 0.8878181238767411.
+2026-05-18 19:22:26,653 - INFO - Trial 6 finished with value: 0.887816427952324 and parameters: {'solver': 'cholesky', 'alpha': 1.3845925885419728, 'tol': 0.00024643448723454293, 'fit_intercept': True, 'class_weight': 'balanced'}. Best is trial 9 with value: 0.8878181238767411.
+2026-05-18 19:22:26,672 - INFO - Trial 2 finished with value: 0.882333432289532 and parameters: {'solver': 'cholesky', 'alpha': 0.28424591763243595, 'tol': 0.0021310096465169386, 'fit_intercept': False, 'class_weight': None}. Best is trial 9 with value: 0.8878181238767411.
+2026-05-18 19:22:37,135 - INFO - Trial 7 finished with value: 0.8859353758406545 and parameters: {'solver': 'lsqr', 'alpha': 2.09823475346676e-05, 'tol': 0.0007438554521582029, 'fit_intercept': False, 'class_weight': 'balanced', 'max_iter': 5000}. Best is trial 9 with value: 0.8878181238767411.
+2026-05-18 19:22:49,450 - INFO - Trial 14 pruned. 
+2026-05-18 19:22:49,670 - INFO - Trial 17 pruned. 
+2026-05-18 19:23:01,467 - INFO - Trial 15 finished with value: 0.8824177397801289 and parameters: {'solver': 'cholesky', 'alpha': 0.004351430928726529, 'tol': 0.00044756232632590584, 'fit_intercept': False, 'class_weight': None}. Best is trial 9 with value: 0.8878181238767411.
+2026-05-18 19:23:01,485 - INFO - Trial 18 finished with value: 0.8824155291274348 and parameters: {'solver': 'auto', 'alpha': 0.009109620298026784, 'tol': 7.396852472756678e-05, 'fit_intercept': False, 'class_weight': None}. Best is trial 9 with value: 0.8878181238767411.
+2026-05-18 19:23:02,569 - INFO - Trial 19 finished with value: 0.8824021380386776 and parameters: {'solver': 'cholesky', 'alpha': 0.9721212937325658, 'tol': 0.0008463678425674091, 'fit_intercept': True, 'class_weight': None}. Best is trial 9 with value: 0.8878181238767411.
+2026-05-18 19:23:23,943 - INFO - Trial 20 finished with value: 0.8879317004380756 and parameters: {'solver': 'lsqr', 'alpha': 7.0821969620390215, 'tol': 2.0620592052335993e-05, 'fit_intercept': False, 'class_weight': 'balanced', 'max_iter': 3000}. Best is trial 20 with value: 0.8879317004380756.
+2026-05-18 19:24:34,338 - INFO - Trial 12 pruned. 
+2026-05-18 19:24:52,867 - INFO - Trial 13 pruned. 
+2026-05-18 19:25:28,050 - INFO - Trial 28 finished with value: 0.8878273169117904 and parameters: {'solver': 'lsqr', 'alpha': 0.0005115712427379333, 'tol': 1.0811816664897012e-05, 'fit_intercept': True, 'class_weight': 'balanced', 'max_iter': 2500}. Best is trial 20 with value: 0.8879317004380756.
+2026-05-18 19:25:57,471 - INFO - Trial 29 finished with value: 0.8878108506713801 and parameters: {'solver': 'lsqr', 'alpha': 0.00030075018697047086, 'tol': 1.8055451836686263e-05, 'fit_intercept': True, 'class_weight': 'balanced', 'max_iter': 2500}. Best is trial 20 with value: 0.8879317004380756.
+2026-05-18 19:26:30,452 - INFO - Trial 30 finished with value: 0.8878821956142 and parameters: {'solver': 'lsqr', 'alpha': 0.00045615203455414116, 'tol': 1.1109584273696258e-05, 'fit_intercept': True, 'class_weight': 'balanced', 'max_iter': 3000}. Best is trial 20 with value: 0.8879317004380756.
+2026-05-18 19:26:54,692 - INFO - Trial 31 finished with value: 0.887738238275636 and parameters: {'solver': 'lsqr', 'alpha': 11.251467129726917, 'tol': 3.951133131829473e-05, 'fit_intercept': True, 'class_weight': 'balanced', 'max_iter': 3500}. Best is trial 20 with value: 0.8879317004380756.
+2026-05-18 19:27:28,363 - INFO - Trial 32 finished with value: 0.8878318281178175 and parameters: {'solver': 'lsqr', 'alpha': 0.0002782161106043673, 'tol': 1.3906669005723853e-05, 'fit_intercept': True, 'class_weight': 'balanced', 'max_iter': 3000}. Best is trial 20 with value: 0.8879317004380756.
+2026-05-18 19:27:58,255 - INFO - Trial 33 finished with value: 0.8879616154937959 and parameters: {'solver': 'lsqr', 'alpha': 0.00016808255059767445, 'tol': 2.7758643807465033e-05, 'fit_intercept': True, 'class_weight': 'balanced', 'max_iter': 3500}. Best is trial 33 with value: 0.8879616154937959.
+2026-05-18 19:28:24,730 - INFO - Trial 34 finished with value: 0.8877758784412068 and parameters: {'solver': 'lsqr', 'alpha': 1.3690916718005115e-05, 'tol': 2.9671267453058145e-05, 'fit_intercept': True, 'class_weight': 'balanced', 'max_iter': 1500}. Best is trial 33 with value: 0.8879616154937959.
+2026-05-18 19:28:46,326 - INFO - Trial 35 finished with value: 0.8873870341787488 and parameters: {'solver': 'lsqr', 'alpha': 8.579813859762899e-05, 'tol': 8.409085665819642e-05, 'fit_intercept': True, 'class_weight': 'balanced', 'max_iter': 3500}. Best is trial 33 with value: 0.8879616154937959.
+2026-05-18 19:28:47,237 - INFO - Trial 4 pruned. 
+2026-05-18 19:29:28,033 - INFO - Trial 37 finished with value: 0.8877618986860398 and parameters: {'solver': 'lsqr', 'alpha': 0.002083814475763101, 'tol': 3.517782578974553e-05, 'fit_intercept': True, 'class_weight': 'balanced', 'max_iter': 3500}. Best is trial 33 with value: 0.8879616154937959.
+2026-05-18 19:29:28,226 - INFO - Trial 36 finished with value: 0.8877673353333236 and parameters: {'solver': 'lsqr', 'alpha': 0.0010576021632877316, 'tol': 3.330056055363014e-05, 'fit_intercept': True, 'class_weight': 'balanced', 'max_iter': 3500}. Best is trial 33 with value: 0.8879616154937959.
+2026-05-18 19:30:04,041 - INFO - Trial 38 finished with value: 0.887068723125582 and parameters: {'solver': 'lsqr', 'alpha': 0.02511197112559078, 'tol': 0.00015301876461313617, 'fit_intercept': True, 'class_weight': 'balanced', 'max_iter': 2000}. Best is trial 33 with value: 0.8879616154937959.
+2026-05-18 19:30:26,761 - INFO - Trial 39 finished with value: 0.888079193972399 and parameters: {'solver': 'lsqr', 'alpha': 0.01870547106177371, 'tol': 1.0050898720441312e-05, 'fit_intercept': False, 'class_weight': 'balanced', 'max_iter': 2000}. Best is trial 39 with value: 0.888079193972399.
+2026-05-18 19:31:00,825 - INFO - Trial 40 finished with value: 0.8879921461960649 and parameters: {'solver': 'lsqr', 'alpha': 0.0001857486113195569, 'tol': 1.0080267474466336e-05, 'fit_intercept': False, 'class_weight': 'balanced', 'max_iter': 3000}. Best is trial 39 with value: 0.888079193972399.
+2026-05-18 19:31:07,166 - INFO - Trial 41 finished with value: 0.8877422927142333 and parameters: {'solver': 'lsqr', 'alpha': 58.16615283929074, 'tol': 5.8655200082347636e-05, 'fit_intercept': False, 'class_weight': 'balanced', 'max_iter': 2000}. Best is trial 39 with value: 0.888079193972399.
+2026-05-18 19:31:51,389 - INFO - Trial 42 finished with value: 0.8878067747522032 and parameters: {'solver': 'lsqr', 'alpha': 7.085338555840314e-05, 'tol': 2.016001698473775e-05, 'fit_intercept': False, 'class_weight': 'balanced', 'max_iter': 2000}. Best is trial 39 with value: 0.888079193972399.
+2026-05-18 19:31:53,012 - INFO - Trial 43 finished with value: 0.8879406936732674 and parameters: {'solver': 'lsqr', 'alpha': 0.000125832290225456, 'tol': 2.3139320013962158e-05, 'fit_intercept': False, 'class_weight': 'balanced', 'max_iter': 2000}. Best is trial 39 with value: 0.888079193972399.
+2026-05-18 19:32:25,857 - INFO - Trial 44 finished with value: 0.8878682808318523 and parameters: {'solver': 'lsqr', 'alpha': 0.18114785620402013, 'tol': 2.0517047617937798e-05, 'fit_intercept': False, 'class_weight': 'balanced', 'max_iter': 3000}. Best is trial 39 with value: 0.888079193972399.
+2026-05-18 19:33:39,275 - INFO - Trial 1 pruned. 
+2026-05-18 19:36:31,766 - INFO - Trial 23 pruned. 
+2026-05-18 19:36:42,028 - INFO - Trial 48 finished with value: 0.8878189540046696 and parameters: {'solver': 'auto', 'alpha': 0.000133013358999473, 'tol': 5.545510437912862e-05, 'fit_intercept': False, 'class_weight': 'balanced'}. Best is trial 39 with value: 0.888079193972399.
+2026-05-18 19:36:50,157 - INFO - Trial 22 pruned. 
+2026-05-18 19:36:53,075 - INFO - Trial 24 pruned. 
+2026-05-18 19:36:54,338 - INFO - Trial 25 pruned. 
+2026-05-18 19:37:51,941 - INFO - Trial 51 finished with value: 0.8869598236875357 and parameters: {'solver': 'lsqr', 'alpha': 0.00015576209441740753, 'tol': 0.00014650247370839238, 'fit_intercept': False, 'class_weight': 'balanced', 'max_iter': 1500}. Best is trial 39 with value: 0.888079193972399.
+2026-05-18 19:37:52,094 - INFO - Trial 52 finished with value: 0.8870323349461466 and parameters: {'solver': 'lsqr', 'alpha': 0.00017347567416190488, 'tol': 0.00013157401554862648, 'fit_intercept': False, 'class_weight': 'balanced', 'max_iter': 1500}. Best is trial 39 with value: 0.888079193972399.
+2026-05-18 19:38:11,829 - INFO - Trial 49 finished with value: 0.887880206722085 and parameters: {'solver': 'lsqr', 'alpha': 0.00016363605032458095, 'tol': 1.0117734490762127e-05, 'fit_intercept': False, 'class_weight': 'balanced', 'max_iter': 2000}. Best is trial 39 with value: 0.888079193972399.
+2026-05-18 19:38:22,525 - INFO - Trial 50 finished with value: 0.888078166736326 and parameters: {'solver': 'lsqr', 'alpha': 1.066104461363732e-05, 'tol': 1.0871062321305385e-05, 'fit_intercept': False, 'class_weight': 'balanced', 'max_iter': 1500}. Best is trial 39 with value: 0.888079193972399.
+2026-05-18 19:39:19,002 - INFO - Trial 55 finished with value: 0.8877437186501302 and parameters: {'solver': 'lsqr', 'alpha': 3.0788551497074724e-05, 'tol': 4.208643064153485e-05, 'fit_intercept': False, 'class_weight': 'balanced', 'max_iter': 4000}. Best is trial 39 with value: 0.888079193972399.
+2026-05-18 19:39:30,635 - INFO - Trial 56 finished with value: 0.8879463883215161 and parameters: {'solver': 'lsqr', 'alpha': 3.2339933722183214e-05, 'tol': 5.311477343624582e-05, 'fit_intercept': False, 'class_weight': 'balanced', 'max_iter': 1500}. Best is trial 39 with value: 0.888079193972399.
+2026-05-18 19:39:33,177 - INFO - Trial 53 finished with value: 0.8879961730238923 and parameters: {'solver': 'lsqr', 'alpha': 0.036968260248923177, 'tol': 1.1261166188606518e-05, 'fit_intercept': False, 'class_weight': 'balanced', 'max_iter': 2500}. Best is trial 39 with value: 0.888079193972399.
+2026-05-18 19:39:33,349 - INFO - Trial 54 finished with value: 0.888005197712627 and parameters: {'solver': 'lsqr', 'alpha': 0.04743067735452017, 'tol': 1.0420839668805701e-05, 'fit_intercept': False, 'class_weight': 'balanced', 'max_iter': 4000}. Best is trial 39 with value: 0.888079193972399.
+2026-05-18 19:39:59,596 - INFO - Trial 58 finished with value: 0.8878202430054154 and parameters: {'solver': 'auto', 'alpha': 1.2454639802824898e-05, 'tol': 0.0015627139733117264, 'fit_intercept': False, 'class_weight': 'balanced'}. Best is trial 39 with value: 0.888079193972399.
+2026-05-18 19:40:02,938 - INFO - Trial 59 finished with value: 0.8878200742880796 and parameters: {'solver': 'auto', 'alpha': 0.04488515723685958, 'tol': 1.0197452269885441e-05, 'fit_intercept': False, 'class_weight': 'balanced'}. Best is trial 39 with value: 0.888079193972399.
+2026-05-18 19:40:03,834 - INFO - Trial 60 finished with value: 0.8878201608329352 and parameters: {'solver': 'auto', 'alpha': 0.02228671902942497, 'tol': 0.012922464155532736, 'fit_intercept': False, 'class_weight': 'balanced'}. Best is trial 39 with value: 0.888079193972399.
+2026-05-18 19:40:24,488 - INFO - Trial 61 finished with value: 0.8878188855013885 and parameters: {'solver': 'cholesky', 'alpha': 0.056662661684296366, 'tol': 0.012020633006030162, 'fit_intercept': False, 'class_weight': 'balanced'}. Best is trial 39 with value: 0.888079193972399.
+2026-05-18 19:40:41,155 - INFO - Trial 57 finished with value: 0.8880306121542978 and parameters: {'solver': 'lsqr', 'alpha': 1.6056481503849948e-05, 'tol': 1.0287729032215371e-05, 'fit_intercept': False, 'class_weight': 'balanced', 'max_iter': 1500}. Best is trial 39 with value: 0.888079193972399.
+2026-05-18 19:41:38,123 - INFO - Trial 63 finished with value: 0.8880557766829643 and parameters: {'solver': 'lsqr', 'alpha': 0.07393459309744206, 'tol': 1.4314339595634071e-05, 'fit_intercept': False, 'class_weight': 'balanced', 'max_iter': 4000}. Best is trial 39 with value: 0.888079193972399.
+2026-05-18 19:41:39,534 - INFO - Trial 62 finished with value: 0.8880549489600128 and parameters: {'solver': 'lsqr', 'alpha': 0.015981502950415616, 'tol': 1.3470522567885245e-05, 'fit_intercept': False, 'class_weight': 'balanced', 'max_iter': 4000}. Best is trial 39 with value: 0.888079193972399.
+2026-05-18 19:41:39,678 - INFO - Trial 65 pruned. 
+2026-05-18 19:41:54,842 - INFO - Trial 64 finished with value: 0.8879302857021292 and parameters: {'solver': 'lsqr', 'alpha': 0.011437440699746412, 'tol': 1.4038614753979325e-05, 'fit_intercept': False, 'class_weight': 'balanced', 'max_iter': 4000}. Best is trial 39 with value: 0.888079193972399.
+2026-05-18 19:41:55,211 - INFO - Trial 68 pruned. 
+2026-05-18 19:42:11,117 - INFO - Trial 69 pruned. 
+2026-05-18 19:42:31,089 - INFO - Trial 67 pruned. 
+2026-05-18 19:42:32,897 - INFO - Trial 66 pruned. 
+2026-05-18 19:42:46,101 - INFO - Trial 70 finished with value: 0.8864670588537387 and parameters: {'solver': 'lsqr', 'alpha': 0.07898128416768353, 'tol': 0.000498860084464306, 'fit_intercept': False, 'class_weight': 'balanced', 'max_iter': 5000}. Best is trial 39 with value: 0.888079193972399.
+2026-05-18 19:43:16,945 - INFO - Trial 71 finished with value: 0.887827246535074 and parameters: {'solver': 'lsqr', 'alpha': 0.3315898667284239, 'tol': 4.0184985158285096e-05, 'fit_intercept': False, 'class_weight': 'balanced', 'max_iter': 5000}. Best is trial 39 with value: 0.888079193972399.
+2026-05-18 19:43:50,619 - INFO - Trial 72 finished with value: 0.8879545815535949 and parameters: {'solver': 'lsqr', 'alpha': 0.006719984831342328, 'tol': 2.9455318499419765e-05, 'fit_intercept': False, 'class_weight': 'balanced', 'max_iter': 1000}. Best is trial 39 with value: 0.888079193972399.
+2026-05-18 19:43:53,397 - INFO - Trial 73 finished with value: 0.8879877871650171 and parameters: {'solver': 'lsqr', 'alpha': 0.0773256287355177, 'tol': 2.6625512954573965e-05, 'fit_intercept': False, 'class_weight': 'balanced', 'max_iter': 1000}. Best is trial 39 with value: 0.888079193972399.
+2026-05-18 19:44:04,870 - INFO - Trial 74 finished with value: 0.8880038629659186 and parameters: {'solver': 'lsqr', 'alpha': 0.006797398444286508, 'tol': 2.6625478617039478e-05, 'fit_intercept': False, 'class_weight': 'balanced', 'max_iter': 1000}. Best is trial 39 with value: 0.888079193972399.
+2026-05-18 19:44:24,981 - INFO - Trial 75 finished with value: 0.8879158403953055 and parameters: {'solver': 'lsqr', 'alpha': 0.0059162629911217336, 'tol': 2.683674090552271e-05, 'fit_intercept': False, 'class_weight': 'balanced', 'max_iter': 1000}. Best is trial 39 with value: 0.888079193972399.
+2026-05-18 19:44:38,534 - INFO - Trial 76 finished with value: 0.8878897629838363 and parameters: {'solver': 'lsqr', 'alpha': 0.23189947179828793, 'tol': 2.2989377551334688e-05, 'fit_intercept': False, 'class_weight': 'balanced', 'max_iter': 4500}. Best is trial 39 with value: 0.888079193972399.
+2026-05-18 19:49:49,364 - INFO - Trial 3 pruned. 
+2026-05-18 20:02:55,719 - INFO - ----- Fine Tuning -----
+2026-05-18 20:02:55,719 - INFO - A new study created in memory with name: no-name-d87d96fa-e5e6-4d3a-9bc9-d7f9a1af7f12
+2026-05-18 20:03:54,100 - INFO - ----- Fine Tuning -----
+2026-05-18 20:03:54,100 - INFO - A new study created in memory with name: no-name-5d30583b-81ab-49e6-895f-75e352d88bf1
+2026-05-18 20:04:50,440 - INFO - Trial 5 finished with value: 0.8878209863948822 and parameters: {'solver': 'cholesky', 'alpha': 0.018728029732574033, 'tol': 0.008333159830873555, 'fit_intercept': False, 'class_weight': 'balanced'}. Best is trial 5 with value: 0.8878209863948822.
+2026-05-18 20:04:50,675 - INFO - Trial 1 finished with value: 0.8823349140856497 and parameters: {'solver': 'auto', 'alpha': 0.0019912006626877196, 'tol': 0.0032838482863512307, 'fit_intercept': False, 'class_weight': None}. Best is trial 5 with value: 0.8878209863948822.
+2026-05-18 20:04:50,723 - INFO - Trial 10 finished with value: 0.8877539155127379 and parameters: {'solver': 'auto', 'alpha': 29.781230061745358, 'tol': 0.01616665022934625, 'fit_intercept': False, 'class_weight': 'balanced'}. Best is trial 5 with value: 0.8878209863948822.
+2026-05-18 20:04:51,030 - INFO - Trial 0 finished with value: 0.8878143262459972 and parameters: {'solver': 'cholesky', 'alpha': 2.3097501976761166, 'tol': 0.0032299700584129576, 'fit_intercept': True, 'class_weight': 'balanced'}. Best is trial 5 with value: 0.8878209863948822.
+2026-05-18 20:04:51,041 - INFO - Trial 8 finished with value: 0.8878114223824489 and parameters: {'solver': 'auto', 'alpha': 3.0856469963922133, 'tol': 1.1982762926418931e-05, 'fit_intercept': False, 'class_weight': 'balanced'}. Best is trial 5 with value: 0.8878209863948822.
+2026-05-18 20:04:51,085 - INFO - Trial 2 finished with value: 0.8878180761258007 and parameters: {'solver': 'auto', 'alpha': 1.2694012597626907, 'tol': 0.0001618385987605233, 'fit_intercept': True, 'class_weight': 'balanced'}. Best is trial 5 with value: 0.8878209863948822.
+2026-05-18 20:04:51,114 - INFO - Trial 6 finished with value: 0.8878207845128372 and parameters: {'solver': 'cholesky', 'alpha': 0.1137833478471946, 'tol': 0.005089151947469542, 'fit_intercept': False, 'class_weight': 'balanced'}. Best is trial 5 with value: 0.8878209863948822.
+2026-05-18 20:04:51,131 - INFO - Trial 11 finished with value: 0.887820392652625 and parameters: {'solver': 'auto', 'alpha': 0.0004721318176321385, 'tol': 0.00024839886098244706, 'fit_intercept': True, 'class_weight': 'balanced'}. Best is trial 5 with value: 0.8878209863948822.
+2026-05-18 20:04:51,629 - INFO - Trial 4 finished with value: 0.8878199361839366 and parameters: {'solver': 'cholesky', 'alpha': 0.0025364820825131817, 'tol': 7.69195108501101e-05, 'fit_intercept': True, 'class_weight': 'balanced'}. Best is trial 5 with value: 0.8878209863948822.
+2026-05-18 20:05:02,808 - INFO - Trial 7 pruned. 
+2026-05-18 20:05:20,006 - INFO - Trial 15 pruned. 
+2026-05-18 20:05:20,109 - INFO - Trial 13 pruned. 
+2026-05-18 20:05:24,645 - INFO - Trial 19 pruned. 
+2026-05-18 20:05:34,103 - INFO - Trial 12 finished with value: 0.8878718306777396 and parameters: {'solver': 'auto', 'alpha': 0.09390479450230271, 'tol': 3.2183425028094784e-05, 'fit_intercept': False, 'class_weight': 'balanced'}. Best is trial 12 with value: 0.8878718306777396.
+2026-05-18 20:05:35,641 - INFO - Trial 18 finished with value: 0.8878725887698824 and parameters: {'solver': 'auto', 'alpha': 6.793460027164618e-05, 'tol': 1.5672274145230922e-05, 'fit_intercept': True, 'class_weight': 'balanced'}. Best is trial 18 with value: 0.8878725887698824.
+2026-05-18 20:05:35,668 - INFO - Trial 9 finished with value: 0.8880148231546328 and parameters: {'solver': 'lsqr', 'alpha': 8.40198175703907, 'tol': 2.072317000104866e-05, 'fit_intercept': False, 'class_weight': 'balanced', 'max_iter': 3000}. Best is trial 9 with value: 0.8880148231546328.
+2026-05-18 20:05:37,163 - INFO - Trial 21 pruned. 
+2026-05-18 20:05:56,591 - INFO - Trial 22 pruned. 
+2026-05-18 20:06:28,201 - INFO - Trial 28 finished with value: 0.888072701648684 and parameters: {'solver': 'lsqr', 'alpha': 1.904647002579427e-05, 'tol': 1.0695698196513854e-05, 'fit_intercept': True, 'class_weight': 'balanced', 'max_iter': 2500}. Best is trial 28 with value: 0.888072701648684.
+2026-05-18 20:06:49,924 - INFO - Trial 29 finished with value: 0.8880304130597422 and parameters: {'solver': 'lsqr', 'alpha': 2.2561780629586152e-05, 'tol': 1.920591136724941e-05, 'fit_intercept': True, 'class_weight': 'balanced', 'max_iter': 2500}. Best is trial 28 with value: 0.888072701648684.
+2026-05-18 20:07:06,116 - INFO - Trial 17 pruned. 
+2026-05-18 20:07:10,346 - INFO - Trial 30 finished with value: 0.8879864867304871 and parameters: {'solver': 'lsqr', 'alpha': 0.00015302658259335047, 'tol': 4.651571484758375e-05, 'fit_intercept': True, 'class_weight': 'balanced', 'max_iter': 2500}. Best is trial 28 with value: 0.888072701648684.
+2026-05-18 20:07:38,946 - INFO - Trial 31 finished with value: 0.8878035302607824 and parameters: {'solver': 'lsqr', 'alpha': 0.0001098350860932941, 'tol': 6.82252258114073e-05, 'fit_intercept': True, 'class_weight': 'balanced', 'max_iter': 1500}. Best is trial 28 with value: 0.888072701648684.
+2026-05-18 20:08:07,284 - INFO - Trial 32 finished with value: 0.8879349915992487 and parameters: {'solver': 'lsqr', 'alpha': 0.00013352935398243577, 'tol': 3.920068149230314e-05, 'fit_intercept': True, 'class_weight': 'balanced', 'max_iter': 2500}. Best is trial 28 with value: 0.888072701648684.
+2026-05-18 20:08:20,470 - INFO - Trial 24 pruned. 
+2026-05-18 20:08:28,009 - INFO - Trial 33 finished with value: 0.8879810615317076 and parameters: {'solver': 'lsqr', 'alpha': 75.70220947063738, 'tol': 1.0449082686303272e-05, 'fit_intercept': True, 'class_weight': 'balanced', 'max_iter': 2500}. Best is trial 28 with value: 0.888072701648684.
+2026-05-18 20:08:47,480 - INFO - Trial 14 pruned. 
+2026-05-18 20:08:55,469 - INFO - Trial 34 finished with value: 0.8880275513309298 and parameters: {'solver': 'lsqr', 'alpha': 25.902364171044002, 'tol': 2.275689766602529e-05, 'fit_intercept': True, 'class_weight': 'balanced', 'max_iter': 3000}. Best is trial 28 with value: 0.888072701648684.
+2026-05-18 20:09:00,653 - INFO - Trial 23 pruned. 
+2026-05-18 20:09:22,069 - INFO - Trial 36 finished with value: 0.8870031194603465 and parameters: {'solver': 'lsqr', 'alpha': 62.56185170744695, 'tol': 0.00024430992216615107, 'fit_intercept': True, 'class_weight': 'balanced', 'max_iter': 3500}. Best is trial 28 with value: 0.888072701648684.
+2026-05-18 20:09:22,097 - INFO - Trial 16 pruned. 
+2026-05-18 20:09:36,243 - INFO - Trial 37 finished with value: 0.8871637033454599 and parameters: {'solver': 'lsqr', 'alpha': 3.0468980592209547e-05, 'tol': 0.000258713807699269, 'fit_intercept': True, 'class_weight': 'balanced', 'max_iter': 3500}. Best is trial 28 with value: 0.888072701648684.
+2026-05-18 20:09:42,779 - INFO - Trial 35 finished with value: 0.8878385395938221 and parameters: {'solver': 'lsqr', 'alpha': 97.66683925125788, 'tol': 1.9089191136337704e-05, 'fit_intercept': True, 'class_weight': 'balanced', 'max_iter': 3500}. Best is trial 28 with value: 0.888072701648684.
+2026-05-18 20:10:04,270 - INFO - Trial 38 finished with value: 0.8869807059158183 and parameters: {'solver': 'lsqr', 'alpha': 0.4367724087897714, 'tol': 0.0002171586036577829, 'fit_intercept': True, 'class_weight': 'balanced', 'max_iter': 3000}. Best is trial 28 with value: 0.888072701648684.
+2026-05-18 20:10:10,504 - INFO - Trial 39 finished with value: 0.8870687876737435 and parameters: {'solver': 'lsqr', 'alpha': 0.3416931552407925, 'tol': 0.00025336203345603344, 'fit_intercept': True, 'class_weight': 'balanced', 'max_iter': 3500}. Best is trial 28 with value: 0.888072701648684.
+2026-05-18 20:10:18,955 - INFO - Trial 40 finished with value: 0.8871805201690657 and parameters: {'solver': 'lsqr', 'alpha': 0.33590948056361564, 'tol': 0.0003373986005261128, 'fit_intercept': True, 'class_weight': 'balanced', 'max_iter': 3500}. Best is trial 28 with value: 0.888072701648684.
+2026-05-18 20:10:45,532 - INFO - Trial 41 finished with value: 0.8871851285451902 and parameters: {'solver': 'lsqr', 'alpha': 0.419133390231304, 'tol': 0.000138050658093622, 'fit_intercept': True, 'class_weight': 'balanced', 'max_iter': 2000}. Best is trial 28 with value: 0.888072701648684.
+2026-05-18 20:11:22,480 - INFO - Trial 42 finished with value: 0.8879984903202971 and parameters: {'solver': 'lsqr', 'alpha': 0.6597560201015289, 'tol': 2.491048653999811e-05, 'fit_intercept': True, 'class_weight': 'balanced', 'max_iter': 3500}. Best is trial 28 with value: 0.888072701648684.
+2026-05-18 20:11:32,085 - INFO - Trial 43 finished with value: 0.8880002528121589 and parameters: {'solver': 'lsqr', 'alpha': 0.8241676662348597, 'tol': 2.5489260818808086e-05, 'fit_intercept': True, 'class_weight': 'balanced', 'max_iter': 3500}. Best is trial 28 with value: 0.888072701648684.
+2026-05-18 20:11:41,061 - INFO - Trial 44 finished with value: 0.8879968458150922 and parameters: {'solver': 'lsqr', 'alpha': 0.7622758317499089, 'tol': 2.360145783513483e-05, 'fit_intercept': True, 'class_weight': 'balanced', 'max_iter': 3000}. Best is trial 28 with value: 0.888072701648684.
+2026-05-18 20:11:42,548 - INFO - Trial 46 finished with value: 0.8874271780220319 and parameters: {'solver': 'lsqr', 'alpha': 13.149555975882228, 'tol': 0.00010941126568080003, 'fit_intercept': True, 'class_weight': 'balanced', 'max_iter': 2000}. Best is trial 28 with value: 0.888072701648684.
+2026-05-18 20:11:52,022 - INFO - Trial 45 finished with value: 0.8879387766764225 and parameters: {'solver': 'lsqr', 'alpha': 10.310901947211372, 'tol': 2.5567116897627216e-05, 'fit_intercept': True, 'class_weight': 'balanced', 'max_iter': 3000}. Best is trial 28 with value: 0.888072701648684.
+2026-05-18 20:11:52,122 - INFO - Trial 3 pruned. 
+2026-05-18 20:11:58,716 - INFO - Trial 47 finished with value: 0.8880423069601477 and parameters: {'solver': 'lsqr', 'alpha': 11.218389272271576, 'tol': 2.411934509055938e-05, 'fit_intercept': True, 'class_weight': 'balanced', 'max_iter': 2000}. Best is trial 28 with value: 0.888072701648684.
+2026-05-18 20:12:07,712 - INFO - Trial 48 finished with value: 0.8880045960638734 and parameters: {'solver': 'lsqr', 'alpha': 19.244279697313903, 'tol': 2.50722247097817e-05, 'fit_intercept': True, 'class_weight': 'balanced', 'max_iter': 2000}. Best is trial 28 with value: 0.888072701648684.
+2026-05-18 20:12:10,687 - INFO - Trial 49 finished with value: 0.8874465848224433 and parameters: {'solver': 'lsqr', 'alpha': 14.429806819983584, 'tol': 8.175072150548557e-05, 'fit_intercept': False, 'class_weight': 'balanced', 'max_iter': 2000}. Best is trial 28 with value: 0.888072701648684.
+2026-05-18 21:32:43,608 - INFO - Trial 20 finished with value: 0.8864163334331104 and parameters: {'solver': 'sag', 'alpha': 0.023049316302420547, 'tol': 1.139556574109776e-05, 'fit_intercept': False, 'class_weight': 'balanced', 'max_iter': 4000}. Best is trial 28 with value: 0.888072701648684.
+2026-05-18 21:35:08,681 - INFO - ----- Fine Tuning -----
+2026-05-18 21:35:08,681 - INFO - A new study created in memory with name: no-name-b15e3a11-02b7-48a8-a56f-22f9778b957a
+2026-05-18 21:35:09,341 - WARNING - Trial 1 failed with parameters: {'solver': 'sag', 'alpha': 0.0035134680931969476, 'tol': 0.0649761898883108, 'fit_intercept': False, 'class_weight': 'balanced', 'max_iter': 1500} because of the following error: TypeError("sklearn.linear_model._ridge.RidgeClassifier() got multiple values for keyword argument 'class_weight'").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 120, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 104, in objective
+    model = make_pipeline(column_transformer, RidgeClassifier(**params, class_weight="balanced", random_state=42))
+                                              ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: sklearn.linear_model._ridge.RidgeClassifier() got multiple values for keyword argument 'class_weight'
+2026-05-18 21:35:09,356 - WARNING - Trial 1 failed with value None.
+2026-05-18 21:35:09,448 - WARNING - Trial 2 failed with parameters: {'solver': 'auto', 'alpha': 61.371937003315104, 'tol': 0.0009576251190029771, 'fit_intercept': False, 'class_weight': None} because of the following error: TypeError("sklearn.linear_model._ridge.RidgeClassifier() got multiple values for keyword argument 'class_weight'").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 120, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 104, in objective
+    model = make_pipeline(column_transformer, RidgeClassifier(**params, class_weight="balanced", random_state=42))
+                                              ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: sklearn.linear_model._ridge.RidgeClassifier() got multiple values for keyword argument 'class_weight'
+2026-05-18 21:35:09,454 - WARNING - Trial 2 failed with value None.
+2026-05-18 21:35:09,503 - WARNING - Trial 3 failed with parameters: {'solver': 'sag', 'alpha': 7.977565747972979, 'tol': 0.0004010786262505232, 'fit_intercept': True, 'class_weight': None, 'max_iter': 500} because of the following error: TypeError("sklearn.linear_model._ridge.RidgeClassifier() got multiple values for keyword argument 'class_weight'").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 120, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 104, in objective
+    model = make_pipeline(column_transformer, RidgeClassifier(**params, class_weight="balanced", random_state=42))
+                                              ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: sklearn.linear_model._ridge.RidgeClassifier() got multiple values for keyword argument 'class_weight'
+2026-05-18 21:35:09,506 - WARNING - Trial 10 failed with parameters: {'solver': 'sag', 'alpha': 0.006084292899710538, 'tol': 0.00010544343819261052, 'fit_intercept': False, 'class_weight': None, 'max_iter': 1500} because of the following error: TypeError("sklearn.linear_model._ridge.RidgeClassifier() got multiple values for keyword argument 'class_weight'").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 120, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 104, in objective
+    model = make_pipeline(column_transformer, RidgeClassifier(**params, class_weight="balanced", random_state=42))
+                                              ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: sklearn.linear_model._ridge.RidgeClassifier() got multiple values for keyword argument 'class_weight'
+2026-05-18 21:35:09,509 - WARNING - Trial 3 failed with value None.
+2026-05-18 21:35:09,510 - WARNING - Trial 10 failed with value None.
+2026-05-18 21:35:09,511 - WARNING - Trial 5 failed with parameters: {'solver': 'auto', 'alpha': 30.67645404296912, 'tol': 0.052591123707681556, 'fit_intercept': False, 'class_weight': None} because of the following error: TypeError("sklearn.linear_model._ridge.RidgeClassifier() got multiple values for keyword argument 'class_weight'").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 120, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 104, in objective
+    model = make_pipeline(column_transformer, RidgeClassifier(**params, class_weight="balanced", random_state=42))
+                                              ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: sklearn.linear_model._ridge.RidgeClassifier() got multiple values for keyword argument 'class_weight'
+2026-05-18 21:35:09,514 - WARNING - Trial 6 failed with parameters: {'solver': 'sag', 'alpha': 44.2317882092393, 'tol': 1.139074187451951e-05, 'fit_intercept': True, 'class_weight': None, 'max_iter': 500} because of the following error: TypeError("sklearn.linear_model._ridge.RidgeClassifier() got multiple values for keyword argument 'class_weight'").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 120, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 104, in objective
+    model = make_pipeline(column_transformer, RidgeClassifier(**params, class_weight="balanced", random_state=42))
+                                              ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: sklearn.linear_model._ridge.RidgeClassifier() got multiple values for keyword argument 'class_weight'
+2026-05-18 21:35:09,516 - WARNING - Trial 5 failed with value None.
+2026-05-18 21:35:09,516 - WARNING - Trial 8 failed with parameters: {'solver': 'lsqr', 'alpha': 0.0023428427647348643, 'tol': 1.2820785285990624e-05, 'fit_intercept': False, 'class_weight': None, 'max_iter': 5000} because of the following error: TypeError("sklearn.linear_model._ridge.RidgeClassifier() got multiple values for keyword argument 'class_weight'").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 120, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 104, in objective
+    model = make_pipeline(column_transformer, RidgeClassifier(**params, class_weight="balanced", random_state=42))
+                                              ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: sklearn.linear_model._ridge.RidgeClassifier() got multiple values for keyword argument 'class_weight'
+2026-05-18 21:35:09,517 - WARNING - Trial 6 failed with value None.
+2026-05-18 21:35:09,519 - WARNING - Trial 8 failed with value None.
+2026-05-18 21:35:09,521 - WARNING - Trial 9 failed with parameters: {'solver': 'lsqr', 'alpha': 55.9802924785188, 'tol': 0.01555406982004735, 'fit_intercept': True, 'class_weight': 'balanced', 'max_iter': 1000} because of the following error: TypeError("sklearn.linear_model._ridge.RidgeClassifier() got multiple values for keyword argument 'class_weight'").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 120, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 104, in objective
+    model = make_pipeline(column_transformer, RidgeClassifier(**params, class_weight="balanced", random_state=42))
+                                              ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: sklearn.linear_model._ridge.RidgeClassifier() got multiple values for keyword argument 'class_weight'
+2026-05-18 21:35:09,521 - WARNING - Trial 4 failed with parameters: {'solver': 'auto', 'alpha': 4.356611799302676e-05, 'tol': 0.0014465344949816372, 'fit_intercept': False, 'class_weight': None} because of the following error: TypeError("sklearn.linear_model._ridge.RidgeClassifier() got multiple values for keyword argument 'class_weight'").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 120, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 104, in objective
+    model = make_pipeline(column_transformer, RidgeClassifier(**params, class_weight="balanced", random_state=42))
+                                              ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: sklearn.linear_model._ridge.RidgeClassifier() got multiple values for keyword argument 'class_weight'
+2026-05-18 21:35:09,522 - WARNING - Trial 9 failed with value None.
+2026-05-18 21:35:09,523 - WARNING - Trial 4 failed with value None.
+2026-05-18 21:35:09,524 - WARNING - Trial 7 failed with parameters: {'solver': 'sag', 'alpha': 0.03622338399195631, 'tol': 0.00022957706515553682, 'fit_intercept': True, 'class_weight': 'balanced', 'max_iter': 4000} because of the following error: TypeError("sklearn.linear_model._ridge.RidgeClassifier() got multiple values for keyword argument 'class_weight'").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 120, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 104, in objective
+    model = make_pipeline(column_transformer, RidgeClassifier(**params, class_weight="balanced", random_state=42))
+                                              ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: sklearn.linear_model._ridge.RidgeClassifier() got multiple values for keyword argument 'class_weight'
+2026-05-18 21:35:09,525 - WARNING - Trial 0 failed with parameters: {'solver': 'auto', 'alpha': 0.18396806559956766, 'tol': 0.01008301780549832, 'fit_intercept': False, 'class_weight': None} because of the following error: TypeError("sklearn.linear_model._ridge.RidgeClassifier() got multiple values for keyword argument 'class_weight'").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 120, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 104, in objective
+    model = make_pipeline(column_transformer, RidgeClassifier(**params, class_weight="balanced", random_state=42))
+                                              ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: sklearn.linear_model._ridge.RidgeClassifier() got multiple values for keyword argument 'class_weight'
+2026-05-18 21:35:09,525 - WARNING - Trial 7 failed with value None.
+2026-05-18 21:35:09,526 - WARNING - Trial 0 failed with value None.
+2026-05-18 21:35:09,527 - WARNING - Trial 11 failed with parameters: {'solver': 'cholesky', 'alpha': 0.1246323085116514, 'tol': 0.03616868991701115, 'fit_intercept': False, 'class_weight': 'balanced'} because of the following error: TypeError("sklearn.linear_model._ridge.RidgeClassifier() got multiple values for keyword argument 'class_weight'").
+Traceback (most recent call last):
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/.venv/lib/python3.13/site-packages/optuna/study/_optimize.py", line 206, in _run_trial
+    value_or_values = func(trial)
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 120, in <lambda>
+    study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
+                                 ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/junior/Documentos/GitHub/prediction-f1-pit-stops-kaggle-competition/src/ridge_tuning.py", line 104, in objective
+    model = make_pipeline(column_transformer, RidgeClassifier(**params, class_weight="balanced", random_state=42))
+                                              ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: sklearn.linear_model._ridge.RidgeClassifier() got multiple values for keyword argument 'class_weight'
+2026-05-18 21:35:09,528 - WARNING - Trial 11 failed with value None.
+2026-05-18 21:35:38,216 - INFO - ----- Fine Tuning -----
+2026-05-18 21:35:38,216 - INFO - A new study created in memory with name: no-name-8c29e81c-a53d-41a6-982b-635d2d7b62f1
+2026-05-18 21:36:23,899 - INFO - Trial 2 finished with value: 0.8823746668397996 and parameters: {'solver': 'auto', 'alpha': 0.038338304895024634, 'tol': 0.0002555051611813666, 'fit_intercept': True, 'class_weight': None}. Best is trial 2 with value: 0.8823746668397996.
+2026-05-18 21:36:23,966 - INFO - Trial 8 finished with value: 0.774095088912324 and parameters: {'solver': 'lsqr', 'alpha': 0.05407967411986652, 'tol': 0.036473151898806684, 'fit_intercept': False, 'class_weight': None, 'max_iter': 500}. Best is trial 2 with value: 0.8823746668397996.
+2026-05-18 21:36:24,026 - INFO - Trial 0 finished with value: 0.8878695064301066 and parameters: {'solver': 'auto', 'alpha': 0.008984854263343356, 'tol': 0.008485252591786287, 'fit_intercept': False, 'class_weight': 'balanced'}. Best is trial 0 with value: 0.8878695064301066.
+2026-05-18 21:36:24,074 - INFO - Trial 4 finished with value: 0.8878124446220521 and parameters: {'solver': 'cholesky', 'alpha': 25.714686389151307, 'tol': 0.00612653188178018, 'fit_intercept': True, 'class_weight': 'balanced'}. Best is trial 0 with value: 0.8878695064301066.
+2026-05-18 21:36:24,080 - INFO - Trial 7 finished with value: 0.7395483386599059 and parameters: {'solver': 'lsqr', 'alpha': 8.415914806770743e-05, 'tol': 0.07162856221195169, 'fit_intercept': True, 'class_weight': 'balanced', 'max_iter': 2500}. Best is trial 0 with value: 0.8878695064301066.
+2026-05-18 21:36:24,085 - INFO - Trial 9 finished with value: 0.8878686624348328 and parameters: {'solver': 'cholesky', 'alpha': 1.07130376985463, 'tol': 0.03303204176776536, 'fit_intercept': False, 'class_weight': 'balanced'}. Best is trial 0 with value: 0.8878695064301066.
+2026-05-18 21:36:24,148 - INFO - Trial 3 finished with value: 0.8879337470420644 and parameters: {'solver': 'auto', 'alpha': 0.042846934053319165, 'tol': 0.002012178015988554, 'fit_intercept': True, 'class_weight': 'balanced'}. Best is trial 3 with value: 0.8879337470420644.
+2026-05-18 21:36:31,933 - INFO - Trial 10 pruned. 
+2026-05-18 21:36:36,901 - INFO - Trial 6 pruned. 
+2026-05-18 21:36:49,255 - INFO - Trial 17 pruned. 
+2026-05-18 21:36:57,907 - INFO - Trial 19 pruned. 
+2026-05-18 21:37:05,836 - INFO - Trial 12 finished with value: 0.8879825914448004 and parameters: {'solver': 'auto', 'alpha': 0.0002710223724844081, 'tol': 0.04684929149719355, 'fit_intercept': True, 'class_weight': 'balanced'}. Best is trial 12 with value: 0.8879825914448004.
+2026-05-18 21:37:05,993 - INFO - Trial 18 finished with value: 0.8879844894957574 and parameters: {'solver': 'cholesky', 'alpha': 0.02632175036309405, 'tol': 0.02884409594774402, 'fit_intercept': False, 'class_weight': 'balanced'}. Best is trial 18 with value: 0.8879844894957574.
+2026-05-18 21:37:12,089 - INFO - Trial 15 pruned. 
+2026-05-18 21:37:19,223 - INFO - Trial 16 pruned. 
+2026-05-18 21:37:23,432 - INFO - Trial 14 pruned. 
+2026-05-18 21:37:25,315 - INFO - Trial 21 finished with value: 0.8880861768599859 and parameters: {'solver': 'auto', 'alpha': 1.2926809258095353, 'tol': 1.658877395640658e-05, 'fit_intercept': True, 'class_weight': 'balanced'}. Best is trial 21 with value: 0.8880861768599859.
+2026-05-18 21:37:29,207 - INFO - Trial 22 finished with value: 0.8880518610387043 and parameters: {'solver': 'auto', 'alpha': 0.0032934313314624893, 'tol': 5.293814467049784e-05, 'fit_intercept': False, 'class_weight': 'balanced'}. Best is trial 21 with value: 0.8880861768599859.
+2026-05-18 21:37:35,250 - INFO - Trial 23 finished with value: 0.88788370458388 and parameters: {'solver': 'auto', 'alpha': 0.0002640066342671658, 'tol': 1.0405943004096508e-05, 'fit_intercept': True, 'class_weight': 'balanced'}. Best is trial 21 with value: 0.8880861768599859.
+2026-05-18 21:37:42,174 - INFO - Trial 27 finished with value: 0.887820856599159 and parameters: {'solver': 'auto', 'alpha': 0.0003954089756043867, 'tol': 0.0003253115188493496, 'fit_intercept': False, 'class_weight': 'balanced'}. Best is trial 21 with value: 0.8880861768599859.
+2026-05-18 21:37:44,751 - INFO - Trial 28 finished with value: 0.8880065256671335 and parameters: {'solver': 'cholesky', 'alpha': 0.6413808699315607, 'tol': 9.40095171076633e-05, 'fit_intercept': False, 'class_weight': 'balanced'}. Best is trial 21 with value: 0.8880861768599859.
+2026-05-18 21:37:46,480 - INFO - Trial 29 finished with value: 0.8879986994612017 and parameters: {'solver': 'auto', 'alpha': 0.40904789545143694, 'tol': 9.068114662766747e-05, 'fit_intercept': False, 'class_weight': 'balanced'}. Best is trial 21 with value: 0.8880861768599859.
+2026-05-18 21:38:15,748 - INFO - Trial 25 pruned. 
+2026-05-18 21:38:19,532 - INFO - Trial 26 pruned. 
+2026-05-18 21:40:19,469 - INFO - Trial 1 pruned. 
+2026-05-18 21:43:56,730 - INFO - Trial 20 pruned. 
+2026-05-18 21:46:48,913 - INFO - Trial 13 pruned. 
+2026-05-18 21:49:42,216 - INFO - Trial 5 pruned. 
+2026-05-18 21:55:33,709 - INFO - Trial 24 pruned. 
+2026-05-18 22:07:48,782 - INFO - Trial 11 pruned. 
+2026-05-18 22:07:48,787 - INFO - Best AUC: 0.8880861768599859 | Best params: {'solver': 'auto', 'alpha': 1.2926809258095353, 'tol': 1.658877395640658e-05, 'fit_intercept': True, 'class_weight': 'balanced'}
+2026-05-18 22:07:48,787 - INFO - ----- Saving Pipeline -----
+2026-05-19 10:18:26,114 - INFO - ----- Saving Pipeline -----
+2026-05-19 10:40:03,022 - INFO - ----- Saving Pipeline -----
+2026-05-19 10:40:24,963 - INFO - ----- Saving Pipeline -----
+2026-05-19 10:40:52,040 - INFO - ----- Saving Pipeline -----
+2026-05-19 10:42:09,429 - INFO - ----- Saving Pipeline -----
+2026-05-19 12:33:14,574 - INFO - ----- Saving Pipeline -----
+2026-05-19 12:33:26,471 - INFO - ----- Saving Pipeline -----
