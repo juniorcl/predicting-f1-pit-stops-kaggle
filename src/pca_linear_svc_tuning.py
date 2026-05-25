@@ -1,31 +1,32 @@
 #%%
+import re
 import sys
 import optuna
 import pickle
 import logging
-import warnings
 
 import numpy as np
 import pandas as pd
-
-from sklearn import set_config
-from lightgbm import LGBMClassifier
 from category_encoders import CatBoostEncoder
 
+from sklearn import set_config
+
+from sklearn.svm import LinearSVC
 from sklearn.metrics import roc_auc_score
-from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import make_pipeline
-from sklearn.decomposition import PCA
+from sklearn.compose import ColumnTransformer
 from sklearn.inspection import permutation_importance
-from sklearn.preprocessing import TargetEncoder, StandardScaler, RobustScaler
+from sklearn.decomposition import PCA
 from sklearn.model_selection import cross_val_score, StratifiedKFold
+from sklearn.preprocessing import TargetEncoder, StandardScaler, RobustScaler
+
 
 #%%
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler('logs/pca_lgbm.log'), 
+        logging.FileHandler('logs/pca_linear_svc.log'), 
         logging.StreamHandler(sys.stdout)
     ]
 )
@@ -34,17 +35,15 @@ optuna_logger = optuna.logging.get_logger("optuna")
 optuna_logger.handlers = logging.getLogger().handlers
 optuna_logger.setLevel(logging.INFO)
 
+set_config(transform_output="pandas")
 
 def dump_pickle(file_obj, file_path):
     with open(file_path, 'bw') as file:
         pickle.dump(file_obj, file)
 
-
-set_config(transform_output="pandas")
-
-
-warnings.filterwarnings("ignore", message="X does not have valid feature names")
-
+def load_pickle(file_path):
+    with open(file_path, 'rb') as file:
+        return pickle.load(file)
 
 column_transformer = ColumnTransformer([
     (
@@ -80,51 +79,44 @@ y_train = pd.read_parquet('../data/processed/y_train.parquet')
 
 
 #%%
-logging.info("----- Fine Tuning -----")
+logging.info("----- Model Tuning -----")
 
 def objective(trial, X, y):
-    
+
     cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
 
     aucs = []
 
     for fold, (train_idx, valid_idx) in enumerate(cv.split(X, y)):
-        
-        X_train, X_valid = X.iloc[train_idx, :], X.iloc[valid_idx, :]
-        y_train, y_valid = y.iloc[train_idx, 0], y.iloc[valid_idx, 0]
+
+        X_train_fold = X.iloc[train_idx, :]
+        X_valid_fold = X.iloc[valid_idx, :]
+
+        y_train_fold = y.iloc[train_idx, 0]
+        y_valid_fold = y.iloc[valid_idx, 0]
 
         model = make_pipeline(
             column_transformer,
             PCA(
                 n_components=trial.suggest_float("n_components", 0.80, 0.99),
-                svd_solver=trial.suggest_categorical("svd_solver", ["auto", "full"]),
+                svd_solver=trial.suggest_categorical("svd_solver", ["full"]),
                 whiten=trial.suggest_categorical("whiten", [True, False]),
-                iterated_power=trial.suggest_int("iterated_power", 1, 10),
-                power_iteration_normalizer=trial.suggest_categorical("power_iteration_normalizer", ["auto", "QR", "LU"]),
             ),
-            LGBMClassifier(
-                objective='binary',
-                metric='auc',
-                boosting_type='gbdt',
-                num_leaves=trial.suggest_int('num_leaves', 16, 256),
-                max_depth=trial.suggest_int('max_depth', 3, 12),
-                learning_rate=trial.suggest_float('learning_rate', 0.01, 0.2, log=True),
-                lambda_l1=trial.suggest_float('lambda_l1', 1e-3, 10.0, log=True),
-                lambda_l2=trial.suggest_float('lambda_l2', 1e-3, 10.0, log=True),
-                feature_fraction=trial.suggest_float('feature_fraction', 0.6, 1.0),
-                bagging_fraction=trial.suggest_float('bagging_fraction', 0.6, 1.0),
-                bagging_freq=trial.suggest_int('bagging_freq', 1, 7),
-                min_child_samples=trial.suggest_int('min_child_samples', 10, 100),
-                verbosity=-1,
-                n_estimators=2000,
-                random_state=42,
-                n_jobs=1
+            StandardScaler(),
+            LinearSVC(
+                C=trial.suggest_float("C", 1e-5, 100, log=True),
+                loss = trial.suggest_categorical("loss", ["squared_hinge"]),
+                tol = trial.suggest_float("tol", 1e-6, 1e-2, log=True),
+                class_weight="balanced",
+                dual=False,
+                max_iter=10000,
+                random_state=42
             )
-        ).fit(X_train, y_train)
+        ).fit(X_train_fold, y_train_fold)
 
-        proba = model.predict_proba(X_valid)[:, 1]
+        score = model.decision_function(X_valid_fold)
 
-        auc = roc_auc_score(y_valid, proba)
+        auc = roc_auc_score(y_valid_fold, score)
         aucs.append(auc)
 
         trial.report(np.mean(aucs), step=fold)
@@ -135,7 +127,7 @@ def objective(trial, X, y):
     return np.mean(aucs)
 
 study = optuna.create_study(direction="maximize", pruner=optuna.pruners.MedianPruner(n_warmup_steps=2))
-study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=50, n_jobs=-1, show_progress_bar=True)
+study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=100, n_jobs=-1, show_progress_bar=True)
 
 logging.info(f"Best AUC: {study.best_value} | Best params: {study.best_params}")
 
@@ -143,25 +135,25 @@ logging.info(f"Best AUC: {study.best_value} | Best params: {study.best_params}")
 #%%
 logging.info("----- Saving Pipeline -----")
 
-pca_params = ["n_components", "svd_solver", "whiten", "iterated_power", "power_iteration_normalizer"]
+best_params = study.best_params
 
-best_pca_params = {k: v for k, v in study.best_params.items() if k in pca_params}
-best_lgbm_params = {k: v for k, v in study.best_params.items() if k not in pca_params}
+pca_keys = ["n_components", "svd_solver", "whiten"]
 
-pipe_tuned = make_pipeline(
+best_pca_params = {k: v for k, v in best_params.items() if k in pca_keys}
+best_linear_svc_params = {k: v for k, v in best_params.items() if k not in pca_keys}
+
+model_tuned = make_pipeline(
     column_transformer,
     PCA(**best_pca_params),
-    LGBMClassifier(
-        **best_lgbm_params,
-        verbosity=-1,
-        n_estimators=2000,
-        random_state=42,
-        n_jobs=1
+    StandardScaler(),
+    LinearSVC(
+        **best_linear_svc_params,
+        class_weight="balanced",
+        dual=False,
+        max_iter=10000,
+        random_state=42
     )
-).fit(X_train, y_train.iloc[:, 0])
+).fit(X_train, y_train.PitNextLap)
 
 
-dump_pickle(pipe_tuned, '../models/model_pca_lgbm.pkl')
-
-
-# %%
+dump_pickle(model_tuned, '../models/model_pca_linear_svc.pkl')

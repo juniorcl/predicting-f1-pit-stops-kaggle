@@ -140,7 +140,7 @@ pipe_tuned = make_pipeline(
         class_weight="balanced",
         max_iter=1000
     )
-).fit(X_train, y_train)
+).fit(X_train, y_train.iloc[:, 0])
 
 
 dump_pickle(pipe_tuned, '../models/model_pca_logistic_regression.pkl')

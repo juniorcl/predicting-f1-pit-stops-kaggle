@@ -1,4 +1,5 @@
 #%%
+import re
 import sys
 import optuna
 import pickle
@@ -6,25 +7,26 @@ import logging
 
 import numpy as np
 import pandas as pd
-
-from sklearn import set_config
 from category_encoders import CatBoostEncoder
 
+from sklearn import set_config
+
+from sklearn.svm import LinearSVC
 from sklearn.metrics import roc_auc_score
-from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import make_pipeline
-from sklearn.decomposition import TruncatedSVD
+from sklearn.compose import ColumnTransformer
 from sklearn.inspection import permutation_importance
-from sklearn.linear_model import LogisticRegression
-from sklearn.preprocessing import TargetEncoder, StandardScaler, RobustScaler
+from sklearn.decomposition import TruncatedSVD
 from sklearn.model_selection import cross_val_score, StratifiedKFold
+from sklearn.preprocessing import TargetEncoder, StandardScaler, RobustScaler
+
 
 #%%
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler('logs/truncatesvd_logistic_regression.log'), 
+        logging.FileHandler('logs/truncatedsvd_linear_svc.log'), 
         logging.StreamHandler(sys.stdout)
     ]
 )
@@ -33,11 +35,15 @@ optuna_logger = optuna.logging.get_logger("optuna")
 optuna_logger.handlers = logging.getLogger().handlers
 optuna_logger.setLevel(logging.INFO)
 
+set_config(transform_output="pandas")
 
 def dump_pickle(file_obj, file_path):
     with open(file_path, 'bw') as file:
         pickle.dump(file_obj, file)
 
+def load_pickle(file_path):
+    with open(file_path, 'rb') as file:
+        return pickle.load(file)
 
 column_transformer = ColumnTransformer([
     (
@@ -73,18 +79,21 @@ y_train = pd.read_parquet('../data/processed/y_train.parquet')
 
 
 #%%
-logging.info("----- Fine Tuning -----")
+logging.info("----- Model Tuning -----")
 
 def objective(trial, X, y):
-    
+
     cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
 
     aucs = []
 
     for fold, (train_idx, valid_idx) in enumerate(cv.split(X, y)):
-        
-        X_train, X_valid = X.iloc[train_idx, :], X.iloc[valid_idx, :]
-        y_train, y_valid = y.iloc[train_idx, 0], y.iloc[valid_idx, 0]
+
+        X_train_fold = X.iloc[train_idx, :]
+        X_valid_fold = X.iloc[valid_idx, :]
+
+        y_train_fold = y.iloc[train_idx, 0]
+        y_valid_fold = y.iloc[valid_idx, 0]
 
         model = make_pipeline(
             column_transformer,
@@ -96,18 +105,20 @@ def objective(trial, X, y):
                 tol=trial.suggest_float("tol", 1e-6, 1e-2, log=True)
             ),
             StandardScaler(),
-            LogisticRegression(
-                solver=trial.suggest_categorical("solver", ["saga"]),
+            LinearSVC(
                 C=trial.suggest_float("C", 1e-5, 100, log=True),
-                l1_ratio=trial.suggest_float("l1_ratio", 0.0, 1.0),
+                loss = trial.suggest_categorical("loss", ["squared_hinge"]),
+                tol = trial.suggest_float("tol_linear_svc", 1e-6, 1e-2, log=True),
                 class_weight="balanced",
-                max_iter=5000
+                dual=False,
+                max_iter=10000,
+                random_state=42
             )
-        ).fit(X_train, y_train)
+        ).fit(X_train_fold, y_train_fold)
 
-        proba = model.predict_proba(X_valid)[:, 1]
+        score = model.decision_function(X_valid_fold)
 
-        auc = roc_auc_score(y_valid, proba)
+        auc = roc_auc_score(y_valid_fold, score)
         aucs.append(auc)
 
         trial.report(np.mean(aucs), step=fold)
@@ -118,7 +129,7 @@ def objective(trial, X, y):
     return np.mean(aucs)
 
 study = optuna.create_study(direction="maximize", pruner=optuna.pruners.MedianPruner(n_warmup_steps=2))
-study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=100, n_jobs=-1, show_progress_bar=True)
+study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=200, n_jobs=-1, show_progress_bar=True)
 
 logging.info(f"Best AUC: {study.best_value} | Best params: {study.best_params}")
 
@@ -126,21 +137,27 @@ logging.info(f"Best AUC: {study.best_value} | Best params: {study.best_params}")
 #%%
 logging.info("----- Saving Pipeline -----")
 
-lg_params = ["C", "solver", "l1_ratio"]
+best_params = study.best_params
 
-best_truncatesvd_params = {k: v for k, v in study.best_params.items() if k not in lg_params}
-best_lg_params = {k: v for k, v in study.best_params.items() if k in lg_params}
+truncatedsvd_params = ["n_components", "algorithm", "n_iter", "power_iteration_normalizer", "tol"]
 
-pipe_tuned = make_pipeline(
+best_truncatesvd_params = {k: v for k, v in best_params.items() if k in truncatedsvd_params}
+best_linear_svc_params = {k: v for k, v in best_params.items() if k not in truncatedsvd_params}
+
+model_tuned = make_pipeline(
     column_transformer,
     TruncatedSVD(**best_truncatesvd_params),
     StandardScaler(),
-    LogisticRegression(
-        **best_lg_params,
+    LinearSVC(
+        C=best_params["C"],
+        loss=best_params["loss"],
+        tol=best_params["tol_linear_svc"],
         class_weight="balanced",
-        max_iter=1000
+        dual=False,
+        max_iter=10000,
+        random_state=42
     )
-).fit(X_train, y_train.iloc[:, 0])
+).fit(X_train, y_train.PitNextLap)
 
 
-dump_pickle(pipe_tuned, '../models/model_truncatedsvd_logistic_regression.pkl')
+dump_pickle(model_tuned, '../models/model_truncatedsvd_linear_svc.pkl')

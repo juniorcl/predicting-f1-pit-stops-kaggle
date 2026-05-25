@@ -3,29 +3,29 @@ import sys
 import optuna
 import pickle
 import logging
-import warnings
 
 import numpy as np
 import pandas as pd
 
 from sklearn import set_config
-from lightgbm import LGBMClassifier
 from category_encoders import CatBoostEncoder
 
 from sklearn.metrics import roc_auc_score
 from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import make_pipeline
+from sklearn.linear_model import LogisticRegression
 from sklearn.decomposition import PCA
-from sklearn.inspection import permutation_importance
 from sklearn.preprocessing import TargetEncoder, StandardScaler, RobustScaler
 from sklearn.model_selection import cross_val_score, StratifiedKFold
+from sklearn.kernel_approximation import RBFSampler
+
 
 #%%
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler('logs/pca_lgbm.log'), 
+        logging.FileHandler('logs/pca_rbfsampler_logistic_regression.log'), 
         logging.StreamHandler(sys.stdout)
     ]
 )
@@ -38,12 +38,6 @@ optuna_logger.setLevel(logging.INFO)
 def dump_pickle(file_obj, file_path):
     with open(file_path, 'bw') as file:
         pickle.dump(file_obj, file)
-
-
-set_config(transform_output="pandas")
-
-
-warnings.filterwarnings("ignore", message="X does not have valid feature names")
 
 
 column_transformer = ColumnTransformer([
@@ -96,29 +90,22 @@ def objective(trial, X, y):
         model = make_pipeline(
             column_transformer,
             PCA(
-                n_components=trial.suggest_float("n_components", 0.80, 0.99),
-                svd_solver=trial.suggest_categorical("svd_solver", ["auto", "full"]),
-                whiten=trial.suggest_categorical("whiten", [True, False]),
-                iterated_power=trial.suggest_int("iterated_power", 1, 10),
-                power_iteration_normalizer=trial.suggest_categorical("power_iteration_normalizer", ["auto", "QR", "LU"]),
+                n_components=trial.suggest_float("n_components_pca", 0.80, 0.99),
+                svd_solver=trial.suggest_categorical("svd_solver", ["full"]),
+                whiten=trial.suggest_categorical("whiten", [True, False])
             ),
-            LGBMClassifier(
-                objective='binary',
-                metric='auc',
-                boosting_type='gbdt',
-                num_leaves=trial.suggest_int('num_leaves', 16, 256),
-                max_depth=trial.suggest_int('max_depth', 3, 12),
-                learning_rate=trial.suggest_float('learning_rate', 0.01, 0.2, log=True),
-                lambda_l1=trial.suggest_float('lambda_l1', 1e-3, 10.0, log=True),
-                lambda_l2=trial.suggest_float('lambda_l2', 1e-3, 10.0, log=True),
-                feature_fraction=trial.suggest_float('feature_fraction', 0.6, 1.0),
-                bagging_fraction=trial.suggest_float('bagging_fraction', 0.6, 1.0),
-                bagging_freq=trial.suggest_int('bagging_freq', 1, 7),
-                min_child_samples=trial.suggest_int('min_child_samples', 10, 100),
-                verbosity=-1,
-                n_estimators=2000,
-                random_state=42,
-                n_jobs=1
+            RBFSampler(
+                gamma=trial.suggest_float("gamma", 1e-6, 10.0, log=True),
+                n_components=trial.suggest_int("n_components", 64, 75, log=True),
+                random_state=42
+            ),
+            StandardScaler(),
+            LogisticRegression(
+                solver=trial.suggest_categorical("solver", ["saga"]),
+                C=trial.suggest_float("C", 1e-5, 100, log=True),
+                l1_ratio=trial.suggest_float("l1_ratio", 0.0, 1.0),
+                max_iter=5000,
+                class_weight="balanced",
             )
         ).fit(X_train, y_train)
 
@@ -135,7 +122,7 @@ def objective(trial, X, y):
     return np.mean(aucs)
 
 study = optuna.create_study(direction="maximize", pruner=optuna.pruners.MedianPruner(n_warmup_steps=2))
-study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=50, n_jobs=-1, show_progress_bar=True)
+study.optimize(lambda trial: objective(trial, X_train, y_train), n_trials=30, n_jobs=-1, show_progress_bar=True)
 
 logging.info(f"Best AUC: {study.best_value} | Best params: {study.best_params}")
 
@@ -143,25 +130,29 @@ logging.info(f"Best AUC: {study.best_value} | Best params: {study.best_params}")
 #%%
 logging.info("----- Saving Pipeline -----")
 
-pca_params = ["n_components", "svd_solver", "whiten", "iterated_power", "power_iteration_normalizer"]
-
-best_pca_params = {k: v for k, v in study.best_params.items() if k in pca_params}
-best_lgbm_params = {k: v for k, v in study.best_params.items() if k not in pca_params}
+best_params = study.best_params
 
 pipe_tuned = make_pipeline(
     column_transformer,
-    PCA(**best_pca_params),
-    LGBMClassifier(
-        **best_lgbm_params,
-        verbosity=-1,
-        n_estimators=2000,
-        random_state=42,
-        n_jobs=1
+    PCA(
+        n_components=best_params["n_components_pca"],
+        svd_solver=best_params["svd_solver"],
+        whiten=best_params["whiten"]
+    ),
+    rbfsampler(
+        gamma=best_params["gamma"],
+        n_components=best_params["n_components"],
+        random_state=42
+    ),
+    StandardScaler(),
+    LogisticRegression(
+        solver=best_params["solver"],
+        C=best_params["C"],
+        l1_ratio=best_params["l1_ratio"],
+        class_weight="balanced",
+        max_iter=5000,
     )
 ).fit(X_train, y_train.iloc[:, 0])
 
 
-dump_pickle(pipe_tuned, '../models/model_pca_lgbm.pkl')
-
-
-# %%
+dump_pickle(pipe_tuned, '../models/model_pca_rbfsampler_logistic_regression.pkl')

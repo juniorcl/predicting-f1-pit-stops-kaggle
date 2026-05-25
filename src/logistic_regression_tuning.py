@@ -125,7 +125,7 @@ pipe_tuned = make_pipeline(
         **study.best_trial.params,
         class_weight="balanced",
     )
-).fit(X_train, y_train)
+).fit(X_train, y_train.iloc[:, 0])
 
 
 dump_pickle(pipe_tuned, '../models/model_logistic_regression.pkl')
