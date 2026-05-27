@@ -1,0 +1,45 @@
+2026-05-25 22:36:25,633 - INFO - ----- Feature Selection -----
+2026-05-25 22:36:35,535 - INFO - ----- Feature Selection -----
+2026-05-25 22:36:45,964 - INFO - ----- Feature Selection -----
+2026-05-25 22:50:27,416 - INFO - ----- Fine Tuning -----
+2026-05-25 22:50:27,418 - INFO - A new study created in memory with name: no-name-2148475f-0334-4baf-ba0d-bac06d0eae44
+2026-05-25 22:55:19,875 - INFO - ----- Fine Tuning -----
+2026-05-25 22:55:19,886 - INFO - A new study created in memory with name: no-name-ec4e96d9-6366-47d4-8e25-a9974d122197
+2026-05-26 14:13:20,298 - INFO - ----- Fine Tuning -----
+2026-05-26 14:13:20,298 - INFO - A new study created in memory with name: no-name-191fcc1a-b0b7-4b0f-b8ad-fc0a80e0ee3c
+2026-05-26 14:25:21,617 - INFO - ----- Fine Tuning -----
+2026-05-26 14:25:21,618 - INFO - A new study created in memory with name: no-name-59a072a9-84a0-4e39-867b-915006b008c7
+2026-05-26 14:42:55,339 - INFO - Trial 7 finished with value: 0.9386025304082948 and parameters: {'n_estimators': 102, 'max_depth': 16, 'min_samples_split': 7, 'min_samples_leaf': 36, 'max_features': 'log2', 'criterion': 'log_loss', 'bootstrap': True, 'class_weight': None}. Best is trial 7 with value: 0.9386025304082948.
+2026-05-26 14:48:14,976 - INFO - Trial 9 finished with value: 0.9384529614168038 and parameters: {'n_estimators': 144, 'max_depth': 19, 'min_samples_split': 20, 'min_samples_leaf': 40, 'max_features': 'log2', 'criterion': 'gini', 'bootstrap': True, 'class_weight': None}. Best is trial 7 with value: 0.9386025304082948.
+2026-05-26 14:57:46,393 - INFO - Trial 4 finished with value: 0.9294673074822214 and parameters: {'n_estimators': 221, 'max_depth': 9, 'min_samples_split': 8, 'min_samples_leaf': 39, 'max_features': 'sqrt', 'criterion': 'gini', 'bootstrap': True, 'class_weight': None}. Best is trial 7 with value: 0.9386025304082948.
+2026-05-26 15:07:19,698 - INFO - Trial 5 finished with value: 0.9346551672964573 and parameters: {'n_estimators': 171, 'max_depth': 12, 'min_samples_split': 9, 'min_samples_leaf': 47, 'max_features': 'log2', 'criterion': 'entropy', 'bootstrap': False, 'class_weight': 'balanced'}. Best is trial 7 with value: 0.9386025304082948.
+2026-05-26 15:19:10,671 - INFO - Trial 2 finished with value: 0.9395427470351855 and parameters: {'n_estimators': 212, 'max_depth': 17, 'min_samples_split': 18, 'min_samples_leaf': 44, 'max_features': 'log2', 'criterion': 'gini', 'bootstrap': False, 'class_weight': 'balanced_subsample'}. Best is trial 2 with value: 0.9395427470351855.
+2026-05-26 15:27:40,820 - INFO - Trial 8 pruned. 
+2026-05-26 15:29:12,609 - INFO - Trial 15 pruned. 
+2026-05-26 15:32:37,549 - INFO - Trial 6 pruned. 
+2026-05-26 15:34:12,997 - INFO - Trial 13 pruned. 
+2026-05-26 15:44:28,802 - INFO - Trial 10 pruned. 
+2026-05-26 15:53:38,362 - INFO - Trial 3 pruned. 
+2026-05-26 16:00:39,854 - INFO - Trial 18 pruned. 
+2026-05-26 16:08:24,786 - INFO - Trial 16 finished with value: 0.9401442342169611 and parameters: {'n_estimators': 231, 'max_depth': 19, 'min_samples_split': 11, 'min_samples_leaf': 45, 'max_features': 'sqrt', 'criterion': 'entropy', 'bootstrap': True, 'class_weight': None}. Best is trial 16 with value: 0.9401442342169611.
+2026-05-26 16:12:41,412 - INFO - Trial 12 pruned. 
+2026-05-26 16:13:16,230 - INFO - Trial 20 pruned. 
+2026-05-26 16:13:25,844 - INFO - Trial 0 finished with value: 0.9407518200594414 and parameters: {'n_estimators': 338, 'max_depth': 16, 'min_samples_split': 10, 'min_samples_leaf': 43, 'max_features': 'sqrt', 'criterion': 'gini', 'bootstrap': False, 'class_weight': 'balanced_subsample'}. Best is trial 0 with value: 0.9407518200594414.
+2026-05-26 16:14:48,868 - INFO - Trial 19 pruned. 
+2026-05-26 16:16:43,873 - INFO - Trial 1 pruned. 
+2026-05-26 16:34:00,229 - INFO - Trial 17 finished with value: 0.9399570263908877 and parameters: {'n_estimators': 198, 'max_depth': 14, 'min_samples_split': 20, 'min_samples_leaf': 34, 'max_features': 'sqrt', 'criterion': 'entropy', 'bootstrap': False, 'class_weight': 'balanced_subsample'}. Best is trial 0 with value: 0.9407518200594414.
+2026-05-26 16:51:01,305 - INFO - Trial 11 finished with value: 0.9415379166746671 and parameters: {'n_estimators': 657, 'max_depth': 17, 'min_samples_split': 4, 'min_samples_leaf': 23, 'max_features': 'sqrt', 'criterion': 'entropy', 'bootstrap': True, 'class_weight': 'balanced'}. Best is trial 11 with value: 0.9415379166746671.
+2026-05-26 16:59:52,503 - INFO - Trial 14 pruned. 
+2026-05-26 17:33:02,603 - INFO - Trial 22 finished with value: 0.9406181244796613 and parameters: {'n_estimators': 414, 'max_depth': 17, 'min_samples_split': 4, 'min_samples_leaf': 29, 'max_features': 'log2', 'criterion': 'gini', 'bootstrap': False, 'class_weight': 'balanced_subsample'}. Best is trial 11 with value: 0.9415379166746671.
+2026-05-26 17:47:34,333 - INFO - Trial 23 finished with value: 0.9393227059983221 and parameters: {'n_estimators': 465, 'max_depth': 17, 'min_samples_split': 3, 'min_samples_leaf': 49, 'max_features': 'log2', 'criterion': 'gini', 'bootstrap': False, 'class_weight': 'balanced_subsample'}. Best is trial 11 with value: 0.9415379166746671.
+2026-05-26 17:53:37,454 - INFO - Trial 21 pruned. 
+2026-05-26 18:30:28,140 - INFO - Trial 25 finished with value: 0.9413890565335669 and parameters: {'n_estimators': 491, 'max_depth': 20, 'min_samples_split': 2, 'min_samples_leaf': 50, 'max_features': 'sqrt', 'criterion': 'gini', 'bootstrap': False, 'class_weight': 'balanced_subsample'}. Best is trial 11 with value: 0.9415379166746671.
+2026-05-26 18:35:26,820 - INFO - Trial 24 finished with value: 0.941739697308825 and parameters: {'n_estimators': 497, 'max_depth': 20, 'min_samples_split': 2, 'min_samples_leaf': 49, 'max_features': 'sqrt', 'criterion': 'entropy', 'bootstrap': False, 'class_weight': 'balanced_subsample'}. Best is trial 24 with value: 0.941739697308825.
+2026-05-26 18:36:46,971 - INFO - Trial 29 finished with value: 0.9414018338345056 and parameters: {'n_estimators': 512, 'max_depth': 20, 'min_samples_split': 16, 'min_samples_leaf': 50, 'max_features': 'sqrt', 'criterion': 'gini', 'bootstrap': False, 'class_weight': 'balanced_subsample'}. Best is trial 24 with value: 0.941739697308825.
+2026-05-26 18:39:26,405 - INFO - Trial 28 finished with value: 0.9413745478212989 and parameters: {'n_estimators': 528, 'max_depth': 20, 'min_samples_split': 5, 'min_samples_leaf': 50, 'max_features': 'sqrt', 'criterion': 'gini', 'bootstrap': False, 'class_weight': 'balanced_subsample'}. Best is trial 24 with value: 0.941739697308825.
+2026-05-26 18:39:30,740 - INFO - Trial 26 finished with value: 0.9414118559465464 and parameters: {'n_estimators': 538, 'max_depth': 20, 'min_samples_split': 16, 'min_samples_leaf': 50, 'max_features': 'sqrt', 'criterion': 'gini', 'bootstrap': False, 'class_weight': 'balanced_subsample'}. Best is trial 24 with value: 0.941739697308825.
+2026-05-26 18:41:15,565 - INFO - Trial 27 finished with value: 0.9414902353955601 and parameters: {'n_estimators': 544, 'max_depth': 20, 'min_samples_split': 2, 'min_samples_leaf': 48, 'max_features': 'sqrt', 'criterion': 'gini', 'bootstrap': False, 'class_weight': 'balanced_subsample'}. Best is trial 24 with value: 0.941739697308825.
+2026-05-26 18:41:15,570 - INFO - Best AUC: 0.941739697308825 | Best params: {'n_estimators': 497, 'max_depth': 20, 'min_samples_split': 2, 'min_samples_leaf': 49, 'max_features': 'sqrt', 'criterion': 'entropy', 'bootstrap': False, 'class_weight': 'balanced_subsample'}
+2026-05-26 18:41:15,571 - INFO - ----- Saving Pipeline -----
+2026-05-26 18:44:49,445 - INFO - ----- Fine Tuning -----
+2026-05-26 18:44:49,445 - INFO - A new study created in memory with name: no-name-cca64aec-eeac-41b8-a9dc-823aacb078b6
